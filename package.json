@@ -73,7 +73,7 @@
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-qunit": "^7.3.1",
-        "fleetbase-extensions-indexer": "../fleetbase-extensions-indexer",
+        "fleetbase-extensions-indexer": "^0.0.1",
         "inter-ui": "^3.19.3",
         "leaflet": "^1.9.2",
         "loader.js": "^4.7.0",
