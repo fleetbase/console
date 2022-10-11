@@ -1,5 +1,7 @@
 'use strict';
 
+const { API_HOST } = process.env;
+
 module.exports = function (environment) {
   let ENV = {
     modulePrefix: '@fleetbase/console',
@@ -17,6 +19,21 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    API: {
+      host: API_HOST ?? 'https://api.fleetbase.io',
+      namespace: 'int/v1',
+    },
+
+    'ember-simple-auth': {
+      routeAfterAuthentication: 'console',
+    },
+
+    'ember-local-storage': {
+      namespace: '@fleetbase',
+      keyDelimiter: '/',
+      includeEmberDataSupport: true,
+    },
   };
 
   if (environment === 'development') {
@@ -25,6 +42,7 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.API.host = API_HOST;
   }
 
   if (environment === 'test') {

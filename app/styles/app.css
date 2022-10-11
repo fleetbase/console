@@ -1,6 +1,11 @@
-/* app/styles/app.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/** Tailwind **/
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-/* @import '@fleetbase/ember-ui.css'; */
+/** Styles **/
+/* @import 'normalize.css'; */
+@import 'inter-ui/inter.css';
+
+/** Fleetbase UI */
+@import '@fleetbase/ember-ui';
