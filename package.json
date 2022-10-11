@@ -25,7 +25,8 @@
         "relink": "yarn link @fleetbase/ember-ui && yarn link @fleetbase/ember-core && yarn link @fleetbase/flb-fleetops-extension",
         "reupdate-full": "yarn upgrade @fleetbase/ember-ui @fleetbase/ember-core @fleetbase/flb-fleetops-extension",
         "reset-core": "rm -rf ../ember-core/node_modules && yarn --cwd ../ember-core install",
-        "reset": "rm -rf node_modules yarn.link && yarn && yarn relink && yarn start"
+        "reset": "rm -rf node_modules yarn.link && yarn && yarn relink && yarn start",
+        "devsetup": "yarn && cd ../ember-core && yarn && yarn link && cd ../ember-ui && yarn && yarn link && cd ../flb-fleetops-extension && yarn && yarn link && cd ../console && yarn relink"
     },
     "devDependencies": {
         "@ember/optional-features": "^2.0.0",
