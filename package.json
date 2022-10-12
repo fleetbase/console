@@ -105,6 +105,8 @@
         "@fleetbase/flb-fleetops-extension": "../flb-fleetops-extension",
         "@fleetbase/flb-storefront-extension": "../flb-storefront-extension",
         "@fleetbase/leaflet-routing-machine": "^3.2.15",
+        "ember-composable-helpers": "^5.0.0",
+        "ember-power-select": "^6.0.1",
         "postcss-at-rules-variables": "^0.3.0",
         "postcss-custom-properties": "^12.1.9",
         "postcss-nth-list": "^1.0.2"
