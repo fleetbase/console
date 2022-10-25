@@ -25,6 +25,21 @@ module.exports = function (environment) {
       namespace: 'int/v1',
     },
 
+    osrm: {
+      host: 'https://routing.fleetbase.io',
+      servers: {
+        ca: 'https://canada.routing.fleetbase.io',
+        us: 'https://us.routing.fleetbase.io',
+      },
+    },
+
+    socket: {
+      path: '/socketcluster/',
+      hostname: 'socket.fleetbase.io',
+      secure: true,
+      port: 8000,
+    },
+
     'ember-simple-auth': {
       routeAfterAuthentication: 'console',
     },

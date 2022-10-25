@@ -14,62 +14,62 @@ const autoprefixer = require('autoprefixer');
 const tailwind = require('tailwindcss');
 
 module.exports = function (defaults) {
-    let app = new EmberApp(defaults, {
-        storeConfigInMeta: false,
+  let app = new EmberApp(defaults, {
+    storeConfigInMeta: false,
 
-        'ember-simple-auth': {
-            useSessionSetupMethod: true,
-        },
+    'ember-simple-auth': {
+      useSessionSetupMethod: true,
+    },
 
-        postcssOptions: {
-            compile: {
-                enabled: true,
-                cacheInclude: [/.*\.(css|scss|hbs)$/, /.tailwind\/config\.js$/],
-                plugins: [
-                    // postcssProperties,
-                    postcssAtRulesVariables,
-                    postcssImport({
-                        path: ['node_modules'],
-                        plugins: [postcssAtRulesVariables, postcssImport],
-                    }),
-                    postcssPresetEnv({ stage: 1 }),
-                    postcssMixins,
-                    postcssEach,
-                    tailwind('./tailwind.js'),
-                    autoprefixer,
-                ],
-            },
-            filter: {
-                enabled: true,
-                plugins: [
-                    // postcssProperties,
-                    postcssAtRulesVariables,
-                    postcssMixins,
-                    postcssEach,
-                    postcssConditionals,
-                ],
-            },
-        },
+    postcssOptions: {
+      compile: {
+        enabled: true,
+        cacheInclude: [/.*\.(css|scss|hbs)$/, /.tailwind\/config\.js$/],
+        plugins: [
+          // postcssProperties,
+          postcssAtRulesVariables,
+          postcssImport({
+            path: ['node_modules'],
+            plugins: [postcssAtRulesVariables, postcssImport],
+          }),
+          postcssPresetEnv({ stage: 1 }),
+          postcssMixins,
+          postcssEach,
+          tailwind('./tailwind.js'),
+          autoprefixer,
+        ],
+      },
+      filter: {
+        enabled: true,
+        plugins: [
+          // postcssProperties,
+          postcssAtRulesVariables,
+          postcssMixins,
+          postcssEach,
+          postcssConditionals,
+        ],
+      },
+    },
 
-        babel: {
-            plugins: [require.resolve('ember-auto-import/babel-plugin')],
-        },
-    });
+    babel: {
+      plugins: [require.resolve('ember-auto-import/babel-plugin')],
+    },
+  });
 
-    let extensions = new FleetbaseExtensionsIndexer();
+  let extensions = new FleetbaseExtensionsIndexer();
 
-    // Use `app.import` to add additional libraries to the generated
-    // output files.
-    //
-    // If you need to use different assets in different
-    // environments, specify an object as the first parameter. That
-    // object's keys should be the environment name and the values
-    // should be the asset to use in that environment.
-    //
-    // If the library that you are including contains AMD or ES6
-    // modules that you would like to import into your application
-    // please specify an object with the list of modules as keys
-    // along with the exports of each module as its value.
+  // Use `app.import` to add additional libraries to the generated
+  // output files.
+  //
+  // If you need to use different assets in different
+  // environments, specify an object as the first parameter. That
+  // object's keys should be the environment name and the values
+  // should be the asset to use in that environment.
+  //
+  // If the library that you are including contains AMD or ES6
+  // modules that you would like to import into your application
+  // please specify an object with the list of modules as keys
+  // along with the exports of each module as its value.
 
-    return app.toTree([extensions]);
+  return app.toTree([extensions]);
 };

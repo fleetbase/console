@@ -6,18 +6,18 @@ import loadExtensions from '@fleetbase/ember-core/utils/load-extensions';
 import mapEngines from '@fleetbase/ember-core/utils/map-engines';
 
 export default class App extends Application {
-    modulePrefix = config.modulePrefix;
-    podModulePrefix = config.podModulePrefix;
-    Resolver = Resolver;
-    extensions = [];
-    engines = {};
+  modulePrefix = config.modulePrefix;
+  podModulePrefix = config.podModulePrefix;
+  Resolver = Resolver;
+  extensions = [];
+  engines = {};
 
-    async ready() {
-        const extensions = await loadExtensions();
+  async ready() {
+    const extensions = await loadExtensions();
 
-        this.extensions = extensions;
-        this.engines = mapEngines(extensions);
-    }
+    this.extensions = extensions;
+    this.engines = mapEngines(extensions);
+  }
 }
 
 loadInitializers(App, config.modulePrefix);
