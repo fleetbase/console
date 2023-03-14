@@ -2,6 +2,7 @@ import Model, { attr } from '@ember-data/model';
 
 export default class UserModel extends Model {
   @attr('string') public_id;
+  @attr('string') company_uuid;
   @attr('string') name;
   @attr('string', {
     defaultValue:

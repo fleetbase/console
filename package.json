@@ -11,7 +11,6 @@
         "test": "tests"
     },
     "scripts": {
-        "reload": "yarn upgrade @fleetbase/ember-core @fleetbase/ember-ui @fleetbase/flb-fleetops-extension && yarn start",
         "build": "ember build --environment=production",
         "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
         "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
@@ -21,17 +20,11 @@
         "lint:js:fix": "eslint . --fix",
         "start": "ember serve",
         "test": "npm-run-all lint test:*",
-        "test:ember": "ember test",
-        "relink": "yarn link @fleetbase/ember-ui && yarn link @fleetbase/ember-core && yarn link @fleetbase/flb-fleetops-extension",
-        "reupdate-full": "yarn upgrade @fleetbase/ember-ui @fleetbase/ember-core @fleetbase/flb-fleetops-extension",
-        "reset-core": "rm -rf ../ember-core/node_modules && yarn --cwd ../ember-core install",
-        "reset": "rm -rf node_modules yarn.link && yarn && yarn relink && yarn start",
-        "devsetup": "yarn && cd ../ember-core && yarn && yarn link && cd ../ember-ui && yarn && yarn link && cd ../flb-fleetops-extension && yarn && yarn link && cd ../console && yarn relink"
+        "test:ember": "ember test"
     },
     "devDependencies": {
         "@ember/optional-features": "^2.0.0",
         "@ember/test-helpers": "^2.8.1",
-        "@fortawesome/ember-fontawesome": "^0.4.1",
         "@fortawesome/free-solid-svg-icons": "^6.2.0",
         "@glimmer/component": "^1.1.2",
         "@glimmer/tracking": "^1.1.2",
@@ -57,7 +50,6 @@
         "ember-data": "~4.4.0",
         "ember-engines": "^0.8.23",
         "ember-fetch": "^8.1.1",
-        "ember-file-upload": "^7.1.0",
         "ember-leaflet": "^5.0.1",
         "ember-load-initializers": "^2.1.2",
         "ember-page-title": "^7.0.0",
@@ -73,7 +65,6 @@
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-qunit": "^7.3.1",
-        "fleetbase-extensions-indexer": "^0.0.1",
         "inter-ui": "^3.19.3",
         "leaflet": "^1.9.2",
         "loader.js": "^4.7.0",
@@ -88,7 +79,6 @@
         "prettier": "^2.7.1",
         "qunit": "^2.19.1",
         "qunit-dom": "^2.0.0",
-        "socketcluster": "^17.2.0",
         "tailwindcss": "^3.1.8",
         "webpack": "^5.74.0"
     },
@@ -100,20 +90,16 @@
     },
     "dependencies": {
         "@ember/legacy-built-in-components": "^0.4.1",
-        "@fleetbase/ember-core": "../ember-core",
-        "@fleetbase/ember-ui": "../ember-ui",
-        "@fleetbase/flb-fleetops-extension": "../flb-fleetops-extension",
-        "@fleetbase/flb-storefront-extension": "../flb-storefront-extension",
+        "@fleetbase/ember-core": "file:../packages/ember-core",
+        "@fleetbase/ember-ui": "file:../packages/ember-ui",
+        "@fleetbase/fleetops-engine": "file:../packages/fleetops-engine",
         "@fleetbase/leaflet-routing-machine": "^3.2.15",
+        "@fortawesome/ember-fontawesome": "^0.4.1",
         "ember-composable-helpers": "^5.0.0",
         "ember-power-select": "^6.0.1",
+        "fleetbase-extensions-indexer": "file:../packages/fleetbase-extensions-indexer",
         "postcss-at-rules-variables": "^0.3.0",
         "postcss-custom-properties": "^12.1.9",
         "postcss-nth-list": "^1.0.2"
-    },
-    "resolutions": {
-        "ember-cli-notifications/postcss-preset-env": "^7.8.2",
-        "ember-engines/broccoli-babel-transpiler": "^v8.0.0-beta.1",
-        "ember-engines/broccoli-babel-transpiler/broccoli-persistent-filter": "^3.1.3"
     }
 }
