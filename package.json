@@ -70,7 +70,7 @@
         "loader.js": "^4.7.0",
         "normalize.css": "^8.0.1",
         "npm-run-all": "^4.1.5",
-        "postcss": "^8.4.17",
+        "postcss": "^8.4.21",
         "postcss-conditionals-renewed": "^1.0.0",
         "postcss-each": "^1.1.0",
         "postcss-mixins": "^9.0.4",
@@ -80,7 +80,12 @@
         "qunit": "^2.19.1",
         "qunit-dom": "^2.0.0",
         "tailwindcss": "^3.1.8",
-        "webpack": "^5.74.0"
+        "webpack": "^5.74.0",
+        "dragula": "^3.7.3",
+        "socketcluster-client": "^17.1.1",
+        "leaflet-contextmenu": "^1.4.0",
+        "leaflet-draw": "^1.0.4",
+        "@fortawesome/fontawesome-svg-core": "^6.4.0"
     },
     "engines": {
         "node": "14.* || >= 16"
@@ -90,16 +95,16 @@
     },
     "dependencies": {
         "@ember/legacy-built-in-components": "^0.4.1",
-        "@fleetbase/ember-core": "file:../packages/ember-core",
-        "@fleetbase/ember-ui": "file:../packages/ember-ui",
-        "@fleetbase/fleetops-engine": "file:../packages/fleetops-engine",
+        "@fleetbase/ember-core": "link:../packages/ember-core",
+        "@fleetbase/ember-ui": "link:../packages/ember-ui",
+        "@fleetbase/fleetops-engine": "link:../packages/fleetops-engine",
         "@fleetbase/leaflet-routing-machine": "^3.2.15",
-        "@fleetbase/storefront-engine": "file:../packages/storefront-engine",
+        "@fleetbase/storefront-engine": "link:../packages/storefront-engine",
         "@fortawesome/ember-fontawesome": "^0.4.1",
         "ember-composable-helpers": "^5.0.0",
         "ember-math-helpers": "^2.18.2",
         "ember-power-select": "^6.0.1",
-        "fleetbase-extensions-indexer": "file:../packages/fleetbase-extensions-indexer",
+        "fleetbase-extensions-indexer": "link:../packages/fleetbase-extensions-indexer",
         "postcss-at-rules-variables": "^0.3.0",
         "postcss-custom-properties": "^12.1.9",
         "postcss-nth-list": "^1.0.2"
