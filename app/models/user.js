@@ -1,26 +1,25 @@
 import Model, { attr } from '@ember-data/model';
 
 export default class UserModel extends Model {
-  @attr('string') public_id;
-  @attr('string') company_uuid;
-  @attr('string') name;
-  @attr('string', {
-    defaultValue:
-      'https://s3.ap-southeast-1.amazonaws.com/flb-assets/static/no-avatar.png',
-  })
-  avatar_url;
-  @attr('string') email;
-  @attr('string') password;
-  @attr('string') phone;
-  @attr('string') company_name;
-  @attr('string') date_of_birth;
-  @attr('string') timezone;
-  @attr('string') country;
-  @attr('string') ip_address;
-  @attr('string') slug;
-  @attr('string') type;
-  // @attr('raw') types;
-  @attr('string') status;
+    @attr('string') public_id;
+    @attr('string') company_uuid;
+    @attr('string') name;
+    @attr('string', {
+        defaultValue: 'https://s3.ap-southeast-1.amazonaws.com/flb-assets/static/no-avatar.png',
+    })
+    avatar_url;
+    @attr('string') email;
+    @attr('string') password;
+    @attr('string') phone;
+    @attr('string') company_name;
+    @attr('string') date_of_birth;
+    @attr('string') timezone;
+    @attr('string') country;
+    @attr('string') ip_address;
+    @attr('string') slug;
+    @attr('string') type;
+    // @attr('raw') types;
+    @attr('string') status;
 }
 
 // import Model, { attr } from '@ember-data/model';

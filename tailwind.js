@@ -9,6 +9,8 @@ module.exports = {
         './node_modules/@fleetbase/ember-ui/addon/components/*.{hbs,js}',
         './node_modules/@fleetbase/ember-ui/addon/components/**/*.{hbs,js}',
         './node_modules/@fleetbase/ember-core/addon/**/*.{hbs,js}',
+        './node_modules/@fleetbase/fleetops-engine/addon/**/*.{hbs,js}',
+        './node_modules/@fleetbase/storefront-engine/addon/**/*.{hbs,js}',
         './node_modules/@fleetbase/*-engine/addon/**/*.{hbs,js}',
         './node_modules/**/*-engine/addon/**/*.{hbs,js}',
         '../packages/*-engine/addon/**/*.{hbs,js}',

@@ -12,7 +12,7 @@ export default class FileModel extends Model {
     @attr('string') uuid;
     @attr('string') uploader_uuid;
     @attr('string') company_uuid;
-    @attr('string') key_uuid;
+    @attr('string') subject_uuid;
 
     /** @attributes */
     @attr('string') caption;
@@ -24,6 +24,7 @@ export default class FileModel extends Model {
     @attr('string') original_filename;
     @attr('string') type;
     @attr('string') content_type;
+    @attr('string') subject_type;
     @attr('number') file_size;
     @attr('string') slug;
     @attr('string') permalink;
