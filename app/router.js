@@ -23,6 +23,12 @@ Router.map(function () {
             as: 'storefront',
             path: 'storefront',
         });
+        this.mount('@fleetbase/dev-engine', {
+            as: 'developers',
+            path: 'developers',
+        });
         this.route('extensions');
+        this.route('settings');
+        this.route('home');
     });
 });

@@ -1,7 +1,5 @@
 'use strict';
 
-const { API_HOST } = process.env;
-
 module.exports = function (environment) {
     let ENV = {
         modulePrefix: '@fleetbase/console',
@@ -21,23 +19,20 @@ module.exports = function (environment) {
         },
 
         API: {
-            host: API_HOST ?? 'https://api.fleetbase.io',
-            namespace: 'int/v1',
+            host: getenv('API_HOST', 'http://localhost:8000'),
+            namespace: getenv('API_NAMESPACE', 'int/v1'),
         },
 
         osrm: {
-            host: 'https://routing.fleetbase.io',
-            servers: {
-                ca: 'https://canada.routing.fleetbase.io',
-                us: 'https://us.routing.fleetbase.io',
-            },
+            host: getenv('OSRM_HOST', 'https://routing.fleetbase.io'),
+            servers: getenv('OSRM_SERVERS', '').split(',').filter(Boolean),
         },
 
         socket: {
-            path: '/socketcluster/',
-            hostname: 'socket.fleetbase.io',
-            secure: true,
-            port: 8000,
+            path: getenv('SOCKETCLUSTER_PATH', '/socketcluster/'),
+            hostname: getenv('SOCKETCLUSTER_HOST', 'localhost'),
+            secure: getenv('SOCKETCLUSTER_SECURE', false),
+            port: getenv('SOCKETCLUSTER_PORT', 38000),
         },
 
         'ember-simple-auth': {
@@ -57,7 +52,6 @@ module.exports = function (environment) {
         // ENV.APP.LOG_TRANSITIONS = true;
         // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
         // ENV.APP.LOG_VIEW_LOOKUPS = true;
-        ENV.API.host = API_HOST;
     }
 
     if (environment === 'test') {
@@ -78,3 +72,7 @@ module.exports = function (environment) {
 
     return ENV;
 };
+
+function getenv(variable, defaultValue = null) {
+    return process.env[variable] !== undefined ? process.env[variable] : defaultValue;
+}
