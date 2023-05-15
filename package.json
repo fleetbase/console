@@ -36,6 +36,7 @@
         "ember-math-helpers": "^2.18.2",
         "ember-power-select": "^6.0.1",
         "ember-prism": "^0.13.0",
+        "ember-radio-button": "^2.0.1",
         "fleetbase-extensions-indexer": "link:../packages/fleetbase-extensions-indexer",
         "postcss-at-rules-variables": "^0.3.0",
         "postcss-custom-properties": "^12.1.9",
