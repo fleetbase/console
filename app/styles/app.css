@@ -8,4 +8,4 @@
 @import 'inter-ui/inter.css';
 
 /** Fleetbase UI */
-@import '@fleetbase/ember-ui';
+@import '@fleetbase/ember-ui/app/styles/addon.css';

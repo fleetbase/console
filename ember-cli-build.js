@@ -7,9 +7,7 @@ const postcssPresetEnv = require('postcss-preset-env');
 const postcssEach = require('postcss-each');
 const postcssMixins = require('postcss-mixins');
 const postcssConditionals = require('postcss-conditionals-renewed');
-// const postcssVars = require('postcss-simple-vars');
 const postcssAtRulesVariables = require('postcss-at-rules-variables');
-// const postcssProperties = require('postcss-custom-properties');
 const autoprefixer = require('autoprefixer');
 const tailwind = require('tailwindcss');
 
@@ -26,7 +24,6 @@ module.exports = function (defaults) {
                 enabled: true,
                 cacheInclude: [/.*\.(css|scss|hbs)$/, /.tailwind\/config\.js$/],
                 plugins: [
-                    // postcssProperties,
                     postcssAtRulesVariables,
                     postcssImport({
                         path: ['node_modules'],
@@ -42,11 +39,10 @@ module.exports = function (defaults) {
             filter: {
                 enabled: true,
                 plugins: [
-                    // postcssProperties,
                     postcssAtRulesVariables,
                     postcssMixins,
                     postcssEach,
-                    postcssConditionals,
+                    postcssConditionals
                 ],
             },
         },

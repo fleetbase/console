@@ -97,6 +97,7 @@
         "postcss": "^8.4.21",
         "postcss-conditionals-renewed": "^1.0.0",
         "postcss-each": "^1.1.0",
+        "postcss-import": "14.1.0",
         "postcss-mixins": "^9.0.4",
         "postcss-preset-env": "^7.8.2",
         "postcss-simple-vars": "^7.0.0",

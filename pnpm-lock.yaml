@@ -219,6 +219,9 @@ devDependencies:
   postcss-each:
     specifier: ^1.1.0
     version: 1.1.0(postcss@8.4.21)
+  postcss-import:
+    specifier: 14.1.0
+    version: 14.1.0(postcss@8.4.21)
   postcss-mixins:
     specifier: ^9.0.4
     version: 9.0.4(postcss@8.4.21)
