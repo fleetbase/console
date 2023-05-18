@@ -50,6 +50,6 @@
     </div>
 
     <div class="mt-3">
-        <Button @buttonType="submit" @text="Create a new Account" @wrapperClass="btn-block" @disabled={{this.isLoading}} @onClick={{this.transitionToOnboard}} />
+        <Button @text="Create a new Account" @wrapperClass="btn-block" @disabled={{this.isLoading}} @onClick={{fn (transition-to "onboard")}} />
     </div>
 </form>

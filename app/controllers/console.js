@@ -109,6 +109,9 @@ export default class ConsoleController extends Controller {
             currency,
             country,
             timezone: null,
+            changeAction: (action) => {
+                this.modalsManager.setOption('action', action);
+            },
             confirm: (modal) => {
                 modal.startLoading();
 

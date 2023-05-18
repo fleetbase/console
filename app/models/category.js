@@ -1,8 +1,8 @@
 import Model, { attr, belongsTo } from '@ember-data/model';
 import { tracked } from '@glimmer/tracking';
-import { computed } from '@ember/object';
+import { computed, get } from '@ember/object';
 import { format, formatDistanceToNow } from 'date-fns';
-import autoSerialize from '../utils/auto-serialize';
+import config from 'ember-get-config';
 
 export default class CategoryModel extends Model {
     /** @ids */
@@ -20,23 +20,18 @@ export default class CategoryModel extends Model {
     @attr('string') owner_type;
     @attr('string') name;
     @attr('string') description;
-    @attr('raw') translations;
     @attr('string') icon;
     @attr('string') icon_color;
-    @attr('string') icon_url;
+    @attr('string', { defaultValue: get(config, 'defaultValues.categoryImage') }) icon_url;
     @attr('string') for;
     @attr('string') slug;
     @attr('string') order;
+    @attr('raw') translations;
 
     /** @dates */
     @attr('date') deleted_at;
     @attr('date') created_at;
     @attr('date') updated_at;
-
-    /** @methods */
-    toJSON() {
-        return autoSerialize(this);
-    }
 
     /** @computed */
     @computed('public_id') get customerId() {

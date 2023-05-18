@@ -41,7 +41,7 @@ export default class ConsoleRoute extends Route {
     @action async beforeModel(transition) {
         this.session.requireAuthentication(transition, 'auth.login');
 
-        return this.session.loadCurrentUser(transition);
+        return this.session.promiseCurrentUser(transition);
     }
 
     /**

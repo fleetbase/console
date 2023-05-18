@@ -38,12 +38,7 @@ module.exports = function (defaults) {
             },
             filter: {
                 enabled: true,
-                plugins: [
-                    postcssAtRulesVariables,
-                    postcssMixins,
-                    postcssEach,
-                    postcssConditionals
-                ],
+                plugins: [postcssAtRulesVariables, postcssMixins, postcssEach, postcssConditionals],
             },
         },
 

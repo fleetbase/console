@@ -1,2 +1,7 @@
-{{page-title "Account"}}
+<EmberWormhole @to="sidebar-menu-items">
+    <Layout::Sidebar::Panel @open={{true}} @title="Account">
+        <Layout::Sidebar::Item @route="console.account.index" @icon="user">Profile</Layout::Sidebar::Item>
+    </Layout::Sidebar::Panel>
+</EmberWormhole>
+
 {{outlet}}

@@ -13,8 +13,14 @@ Router.map(function () {
         this.route('forgot-password');
         this.route('reset-password');
     });
+    this.route('onboard', function () {
+        this.route('verify-email');
+    });
     this.route('console', { path: '/' }, function () {
-        this.route('account');
+        this.route('home');
+        this.route('extensions');
+        this.route('account', function () {});
+        this.route('settings', function () {});
         this.mount('@fleetbase/fleetops-engine', {
             as: 'fleet-ops',
             path: 'fleet-ops',
@@ -27,8 +33,5 @@ Router.map(function () {
             as: 'developers',
             path: 'developers',
         });
-        this.route('extensions');
-        this.route('settings');
-        this.route('home');
     });
 });
