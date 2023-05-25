@@ -4,7 +4,6 @@ import { inject as service } from '@ember/service';
 import { getOwner } from '@ember/application';
 import { action, computed } from '@ember/object';
 import { alias } from '@ember/object/computed';
-import { classify } from '@ember/string';
 import { isArray } from '@ember/array';
 import first from '@fleetbase/ember-core/utils/first';
 

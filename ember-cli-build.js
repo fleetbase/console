@@ -1,5 +1,6 @@
 'use strict';
 
+/** eslint-disable node/no-unpublished-require */
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const FleetbaseExtensionsIndexer = require('fleetbase-extensions-indexer');
 const postcssImport = require('postcss-import');
@@ -14,6 +15,10 @@ const tailwind = require('tailwindcss');
 module.exports = function (defaults) {
     let app = new EmberApp(defaults, {
         storeConfigInMeta: false,
+
+        minifyCSS: {
+            enabled: false,
+        },
 
         'ember-simple-auth': {
             useSessionSetupMethod: true,

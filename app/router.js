@@ -1,6 +1,5 @@
 import EmberRouter from '@ember/routing/router';
 import config from '@fleetbase/console/config/environment';
-import App from './app';
 
 export default class Router extends EmberRouter {
     location = config.locationType;

@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
-import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import isElectron from '@fleetbase/ember-core/utils/is-electron';
+import pathToRoute from '@fleetbase/ember-core/utils/path-to-route';
 
 export default class ApplicationRoute extends Route {
     @service session;
@@ -17,7 +17,7 @@ export default class ApplicationRoute extends Route {
      * @return {Transition}
      * @memberof ApplicationRoute
      */
-    async beforeModel(transition) {
+    async beforeModel() {
         await this.session.setup();
 
         const { isAuthenticated } = this.session;

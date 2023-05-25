@@ -1,4 +1,4 @@
-import Model, { attr, belongsTo } from '@ember-data/model';
+import Model, { attr } from '@ember-data/model';
 import { computed } from '@ember/object';
 import { notEmpty } from '@ember/object/computed';
 import { getOwner } from '@ember/application';

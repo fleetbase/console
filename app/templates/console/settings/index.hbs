@@ -4,7 +4,7 @@
     <div class="container mx-auto h-screen" {{increase-height-by 500}}>
         <div class="max-w-3xl my-10 mx-auto space-y-6">
             <ContentPanel @title="Organization Settings" @open={{true}} @pad={{true}} @panelBodyClass="bg-white dark:bg-gray-800">
-                <form {{on "submit" (fn this.saveSettings)}}>
+                <form {{on "submit" this.saveSettings}}>
                     <InputGroup @name="Organization name" @value={{@model.name}} />
                     <InputGroup @name="Organization description" @value={{@model.description}} />
                     <InputGroup @name="Organization phone number">
