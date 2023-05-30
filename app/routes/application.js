@@ -1,6 +1,5 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
-import { tracked } from '@glimmer/tracking';
 import isElectron from '@fleetbase/ember-core/utils/is-electron';
 import pathToRoute from '@fleetbase/ember-core/utils/path-to-route';
 
@@ -18,6 +17,7 @@ export default class ApplicationRoute extends Route {
      * @return {void|Transition}
      * @memberof ApplicationRoute
      */
+    // eslint-disable-next-line ember/classic-decorator-hooks
     async init() {
         super.init(...arguments);
         const { shouldInstall, shouldOnboard } = await this.checkInstallationStatus();

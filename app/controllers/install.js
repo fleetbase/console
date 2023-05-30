@@ -2,8 +2,7 @@ import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
-import { timeout, all } from 'ember-concurrency';
-import { task, taskGroup } from 'ember-concurrency-decorators';
+import { task } from 'ember-concurrency-decorators';
 
 export default class InstallController extends Controller {
     @service fetch;
