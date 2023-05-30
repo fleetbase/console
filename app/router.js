@@ -33,4 +33,5 @@ Router.map(function () {
             path: 'developers',
         });
     });
+    this.route('install');
 });
