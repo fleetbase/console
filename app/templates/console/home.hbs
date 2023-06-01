@@ -1,2 +1,143 @@
-{{page-title "Home"}}
-{{outlet}}
+<Layout::Section::Header @title="Welcome back! 🚀" />
+
+<Layout::Section::Body class="overflow-y-scroll h-full">
+    <div class="container mx-auto h-screen" {{increase-height-by 500}}>
+
+        <!-- Add the banner section -->
+        <div class="max-w-6xl my-10 mx-auto space-y-1">
+            <div class="bg-black-500 text-white px-4 py-2 flex justify-between items-center">
+                <div class="flex-1">Fleetbase is open source - support us by starring on GitHub</div>
+                <div class="flex space-x-4">
+                    <Button @size="lg" @type="primary" @buttonType="submit" @text="What's new?" style="background-color: white; color: black;" />
+                    <Button @size="lg" @type="primary" @buttonType="submit" @text="Star us on Github " style="background-color: white; color: black;">
+                        <img src="/images/github-mark.png" alt="GitHub" class="w-6 h-6" />
+                    </Button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-6xl my-10 mx-auto space-y-1">
+            <ContentPanel @title="Overview" @open={{true}} @pad={{true}} @panelBodyClass="bg-white dark:bg-gray-800">
+                <p class="text-lg">
+                    Fleetbase, your open-source logistics and supply chain management platform. Designed for logistics companies and developers, Fleetbase offers cloud and open-source
+                    versions to meet your needs. Streamline operations, create custom extensions, and join a community of innovators. Simplify processes and stay competitive. Welcome to
+                    Fleetbase! 👋
+                </p>
+            </ContentPanel>
+        </div>
+
+        <div class="max-w-6xl my-10 mx-auto space-y-1">
+            <ContentPanel @title="Resources" @open={{true}} @pad={{true}} @panelBodyClass="bg-white dark:bg-gray-800">
+                <ul class="flex flex-wrap mt-4 -mx-2">
+                    <li class="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4 px-2">
+                        <a
+                            href="https://github.com/fleetbase/fleetbase"
+                            class="block bg-gray-200 hover:bg-gray-300 text-gray-800 hover:text-gray-900 px-4 py-2 rounded-lg transition duration-300 ease-in-out"
+                        >
+                            <span class="font-bold">GitHub</span>
+                            <span class="text-sm">Explore our repositories</span>
+                        </a>
+                    </li>
+                    <li class="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4 px-2">
+                        <a
+                            href="https://docs.fleetbase.dev/api"
+                            class="block bg-gray-200 hover:bg-gray-300 text-gray-800 hover:text-gray-900 px-4 py-2 rounded-lg transition duration-300 ease-in-out"
+                        >
+                            <span class="font-bold">API Docs</span>
+                            <span class="text-sm">Learn about our API</span>
+                        </a>
+                    </li>
+                    <li class="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4 px-2">
+                        <a
+                            href="https://fleetbase.github.io/guides/"
+                            class="block bg-gray-200 hover:bg-gray-300 text-gray-800 hover:text-gray-900 px-4 py-2 rounded-lg transition duration-300 ease-in-out"
+                        >
+                            <span class="font-bold">User Guides</span>
+                            <span class="text-sm">Discover how to use Fleetbase</span>
+                        </a>
+                    </li>
+                    <li class="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4 px-2">
+                        <a
+                            href="https://www.fleetbase.io/"
+                            class="block bg-gray-200 hover:bg-gray-300 text-gray-800 hover:text-gray-900 px-4 py-2 rounded-lg transition duration-300 ease-in-out"
+                        >
+                            <span class="font-bold">Website</span>
+                            <span class="text-sm">Visit our official website</span>
+                        </a>
+                    </li>
+                    <li class="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4 px-2">
+                        <a
+                            href="https://discord.com/invite/V7RVWRQ2Wm"
+                            class="block bg-gray-200 hover:bg-gray-300 text-gray-800 hover:text-gray-900 px-4 py-2 rounded-lg transition duration-300 ease-in-out"
+                        >
+                            <span class="font-bold">Discord</span>
+                            <span class="text-sm">Join our community on Discord</span>
+                        </a>
+                    </li>
+                </ul>
+            </ContentPanel>
+        </div>
+
+        <div class="max-w-6xl my-10 mx-auto space-y-1">
+            <ContentPanel @title="Quick Access" @open={{true}} @pad={{true}} @panelBodyClass="bg-white dark:bg-gray-800">
+                <div class="grid grid-cols-4 gap-4 mt-4">
+                    <!-- System Actions -->
+                    <span class="btn-wrapper inline-flex rounded-md flex-1">
+                        <Button @icon="magic" @size="lg" @type="primary" @buttonType="submit" @text="Create Order" @onClick={{this.sendSecureLink}} @isLoading={{this.isLoading}} />
+                    </span>
+                    <span class="btn-wrapper inline-flex rounded-md flex-1">
+                        <Button @icon="magic" @size="lg" @type="primary" @buttonType="submit" @text="View Orders" @onClick={{this.sendSecureLink}} @isLoading={{this.isLoading}} />
+                    </span>
+                    <span class="btn-wrapper inline-flex rounded-md flex-1">
+                        <Button @icon="magic" @size="lg" @type="primary" @buttonType="submit" @text="Create Storefront" @onClick={{this.sendSecureLink}} @isLoading={{this.isLoading}} />
+                    </span>
+                    <span class="btn-wrapper inline-flex rounded-md flex-1">
+                        <Button @icon="magic" @size="lg" @type="primary" @buttonType="submit" @text="Create User" @onClick={{this.sendSecureLink}} @isLoading={{this.isLoading}} />
+                    </span>
+
+                    <!-- External Actions -->
+                    <span class="btn-wrapper inline-flex rounded-md flex-1">
+                        <Button @icon="magic" @size="lg" @type="primary" @buttonType="submit" @text="Report Bug" @onClick={{this.sendSecureLink}} @isLoading={{this.isLoading}} />
+                    </span>
+                    <span class="btn-wrapper inline-flex rounded-md flex-1">
+                        <Button @icon="magic" @size="lg" @type="primary" @buttonType="submit" @text="Report Issue" @onClick={{this.sendSecureLink}} @isLoading={{this.isLoading}} />
+                    </span>
+                    <span class="btn-wrapper inline-flex rounded-md flex-1">
+                        <Button @icon="magic" @size="lg" @type="primary" @buttonType="submit" @text="Request Feature" @onClick={{this.sendSecureLink}} @isLoading={{this.isLoading}} />
+                    </span>
+                    <span class="btn-wrapper inline-flex rounded-md flex-1">
+                        <Button @icon="magic" @size="lg" @type="primary" @buttonType="submit" @text="Contact Support" @onClick={{this.sendSecureLink}} @isLoading={{this.isLoading}} />
+                    </span>
+                </div>
+            </ContentPanel>
+        </div>
+
+        {{!-- <div class="max-w-6xl my-10 mx-auto space-y-1">
+            <ContentPanel @title="Fleetbase Blog" @open={{true}} @pad={{true}} @panelBodyClass="bg-white dark:bg-gray-800" />
+        </div> --}}
+
+        <div class="max-w-6xl my-10 mx-auto space-y-1">
+            <ContentPanel @title="Partners / Integrations" @open={{true}} @pad={{true}} @panelBodyClass="bg-white dark:bg-gray-800">
+                <div class="partners-grid grid grid-cols-3 gap-4">
+                    <div class="partner">
+                        <img src="images/aws_logo.jpeg" alt="AWS" />
+                        <h3>AWS</h3>
+                        <p>Once click install of Fleetbase using AWS.</p>
+                    </div>
+                    <div class="partner">
+                        <img src="images/digitalocean-avatar.jpeg" alt="Digital Ocean" />
+                        <h3>Digital Ocean</h3>
+                        <p>Once click install of Fleetbase using Digital Ocean.</p>
+                    </div>
+                    <div class="partner">
+                        <img src="images/lala_move.jpeg" alt="Lala Move" />
+                        <h3>Lala Move</h3>
+                        <p>Integrate your Lala Move account to assign delivery orders to Lala Move.</p>
+                    </div>
+                    <!-- Add more divs for additional partners -->
+                </div>
+            </ContentPanel>
+        </div>
+
+    </div>
+</Layout::Section::Body>
