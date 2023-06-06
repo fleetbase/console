@@ -32,6 +32,17 @@ Router.map(function () {
             as: 'developers',
             path: 'developers',
         });
+        this.route('admin', function () {
+            this.route('config', function () {
+                this.route('database');
+                this.route('cache');
+                this.route('filesystem');
+                this.route('mail');
+                this.route('notification-channels');
+                this.route('queue');
+                this.route('services');
+            });
+        });
     });
     this.route('install');
 });

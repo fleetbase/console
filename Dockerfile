@@ -24,7 +24,7 @@ RUN pnpm install
 COPY console .
 
 # Build the application
-RUN ember build
+RUN pnpm build
 
 # ---- Serve Stage ----
 FROM nginx:alpine

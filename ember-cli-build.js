@@ -16,8 +16,8 @@ module.exports = function (defaults) {
     let app = new EmberApp(defaults, {
         storeConfigInMeta: false,
 
-        minifyCSS: {
-            enabled: false,
+        fingerprint: {
+            exclude: ['leaflet/', 'leaflet-images/'],
         },
 
         'ember-simple-auth': {

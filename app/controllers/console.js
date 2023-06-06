@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import { getOwner } from '@ember/application';
+import { later } from '@ember/runloop';
 import { action, computed } from '@ember/object';
 import { alias } from '@ember/object/computed';
 import { isArray } from '@ember/array';
@@ -138,9 +139,13 @@ export default class ConsoleController extends Controller {
                     .then(() => {
                         this.fetch.flushRequestCache('auth/organizations');
                         this.notifications.success('You have created a new organization!');
-                        setTimeout(() => {
-                            window.location.reload();
-                        }, 900);
+                        later(
+                            this,
+                            () => {
+                                window.location.reload();
+                            },
+                            900
+                        );
                     });
             },
         });

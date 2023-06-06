@@ -52,7 +52,6 @@ export default class InstallController extends Controller {
 
     @task({ enqueue: true, maxConcurrency: 1 }) *install() {
         try {
-            // yield all([this.createdb.perform(), this.migrate.perform(), this.seed.perform()]);
             yield this.createdb.perform();
             yield this.migrate.perform();
             yield this.seed.perform();

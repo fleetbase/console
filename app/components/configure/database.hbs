@@ -1,0 +1,41 @@
+{{!-- <ContentPanel @title="MySQL Connection" @pad={{true}} @panelBodyClass="bg-white dark:bg-gray-800">
+    {{#each-in this.mysqlConfig as |key value|}}
+        {{#if (is-object value)}}
+            <div>
+                <div class="flex flex-row items-center">
+                    <InputLabel @labelText={{key}} />
+                    <Button @wrapperClass="ml-2" @text="Add new option" @size="xs" @onClick={{this.addMysqlOption}} />
+                </div>
+                <div class="rounded-lg border border-gray-300 dark:border-gray-900 bg-gray-200 dark:bg-gray-700 shadow-sm mt-2 p-4">
+                    {{#each-in value as |okey ovalue|}}
+                        <div class="flex flex-row items-center space-x-2">
+                            <Input class="flex-1 form-input form-input-sm" @value={{okey}} placeholder={{okey}} />
+                            <Input class="flex-1 form-input form-input-sm" @value={{ovalue}} placeholder={{okey}} />
+                        </div>
+                    {{/each-in}}
+                    <div class="dark:text-gray-400 text-xs">No {{key}} options provided</div>
+                </div>
+            </div>
+        {{else}}
+            <InputGroup @name={{key}} @value={{value}} {{on "input" (fn this.setOption "mysqlConfig" key)}} />
+        {{/if}}
+    {{/each-in}}
+    {{#if this.mysqlConnectionResponse}}
+        <div class="animate-pulse flex flex-row items-center rounded-lg border {{if (eq this.mysqlConnectionResponse.status 'error') 'border-red-900 bg-red-800 text-red-100' 'border-green-900 bg-green-800 text-green-100'}} shadow-sm my-2 px-4 py-2">
+            <FaIcon @icon={{if (eq this.mysqlConnectionResponse.status 'error') 'triangle-exclamation' 'circle-check'}} class="mr-1.5 {{if (eq this.mysqlConnectionResponse.status 'error') 'text-red-200' 'text-green-200'}}" />
+            <span class="text-xs">{{this.this.mysqlConnectionResponse.message}}</span>
+        </div>
+    {{/if}}
+    <Button @wrapperClass="mt-3" @icon="plug" @text="Test Connection" @onClick={{this.testMysqlConnection}} @isLoading={{this.isLoading}} />
+</ContentPanel>
+
+<ContentPanel @title="Redis Connection" @pad={{true}} @panelBodyClass="bg-white dark:bg-gray-800">
+    {{#each-in this.redisConfig as |key value|}}
+        <InputGroup @name={{key}} @value={{value}} />
+    {{/each-in}}
+    <Button @wrapperClass="mt-3" @icon="plug" @text="Test Connection" @onClick={{this.testRedisConnection}} @isLoading={{this.isLoading}} />
+</ContentPanel>
+
+<div class="mt-3 flex items-center justify-end">
+    <Button @type="primary" @size="lg" @icon="save" @text="Save Changes" @onClick={{this.save}} @isLoading={{this.isLoading}} />
+</div> --}}
