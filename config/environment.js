@@ -19,7 +19,7 @@ module.exports = function (environment) {
         },
 
         API: {
-            host: getenv('API_HOST', 'http://localhost:8000'),
+            host: getenv('API_HOST'),
             namespace: getenv('API_NAMESPACE', 'int/v1'),
         },
 
@@ -30,7 +30,7 @@ module.exports = function (environment) {
 
         socket: {
             path: getenv('SOCKETCLUSTER_PATH', '/socketcluster/'),
-            hostname: getenv('SOCKETCLUSTER_HOST', 'localhost'),
+            hostname: getenv('SOCKETCLUSTER_HOST'),
             secure: getenv('SOCKETCLUSTER_SECURE', false),
             port: getenv('SOCKETCLUSTER_PORT', 38000),
         },
