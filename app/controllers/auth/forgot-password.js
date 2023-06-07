@@ -44,7 +44,10 @@ export default class AuthForgotPasswordController extends Controller {
      *
      * @memberof AuthForgotPasswordController
      */
-    @action sendSecureLink() {
+    @action sendSecureLink(event) {
+        // firefox patch
+        event.preventDefault();
+
         const { email } = this;
 
         this.isLoading = true;

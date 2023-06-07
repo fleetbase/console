@@ -94,7 +94,10 @@ export default class AuthLoginController extends Controller {
      *
      * @void
      */
-    @action async login() {
+    @action async login(event) {
+        // firefox patch
+        event.preventDefault();
+
         // get user credentials
         const { email, password, rememberMe } = this;
 

@@ -51,7 +51,10 @@ export default class AuthResetPasswordController extends Controller {
      *
      * @memberof AuthResetPasswordController
      */
-    @action resetPassword() {
+    @action resetPassword(event) {
+        // firefox patch
+        event.preventDefault();
+
         const { code, password, password_confirmation } = this;
         const { id } = this.model;
 
