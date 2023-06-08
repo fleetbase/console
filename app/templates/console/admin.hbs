@@ -3,13 +3,10 @@
 <EmberWormhole @to="sidebar-menu-items">
     <Layout::Sidebar::Item @route="console.admin.index" @icon="rectangle-list">Overview</Layout::Sidebar::Item>
     <Layout::Sidebar::Panel @open={{true}} @title="System Configuration">
-        <Layout::Sidebar::Item @route="console.admin.config.database" @icon="database">Database</Layout::Sidebar::Item>
-        <Layout::Sidebar::Item @route="console.admin.config.cache" @icon="sd-card">Cache</Layout::Sidebar::Item>
-        <Layout::Sidebar::Item @route="console.admin.config.filesystem" @icon="hard-drive">Filesystem</Layout::Sidebar::Item>
-        <Layout::Sidebar::Item @route="console.admin.config.mail" @icon="envelope">Mail</Layout::Sidebar::Item>
-        <Layout::Sidebar::Item @route="console.admin.config.queue" @icon="layer-group">Queue</Layout::Sidebar::Item>
-        <Layout::Sidebar::Item @route="console.admin.config.notification-channels" @icon="paper-plane">Notification Channels</Layout::Sidebar::Item>
         <Layout::Sidebar::Item @route="console.admin.config.services" @icon="bell-concierge">Services</Layout::Sidebar::Item>
+        <Layout::Sidebar::Item @route="console.admin.config.mail" @icon="envelope">Mail</Layout::Sidebar::Item>
+        <Layout::Sidebar::Item @route="console.admin.config.filesystem" @icon="hard-drive">Filesystem</Layout::Sidebar::Item>
+        <Layout::Sidebar::Item @route="console.admin.config.queue" @icon="layer-group">Queue</Layout::Sidebar::Item>
     </Layout::Sidebar::Panel>
 </EmberWormhole>
 

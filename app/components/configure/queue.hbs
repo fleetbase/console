@@ -1,0 +1,18 @@
+<ContentPanel @title="Queue" @open={{true}} @pad={{true}} @panelBodyClass="bg-white dark:bg-gray-800">
+    <InputGroup @name="Driver" @helpText="Select the default queue driver for Fleetbase to use.">
+        <Select @options={{this.connections}} @value={{this.driver}} @onSelect={{fn this.setDriver}} @placeholder="Select queue driver" disabled={{this.isLoading}} class="w-full" />
+    </InputGroup>
+    {{#if (eq this.driver "beanstalkd")}}
+        <InputGroup @name="Beanstalk Host" @value={{this.beanstalkdHost}} disabled={{this.isLoading}} />
+        <InputGroup @name="Beanstalk Queue" @value={{this.beanstalkdQueue}} />
+    {{/if}}
+    {{#if (eq this.driver "sqs")}}
+        <InputGroup @name="SQS Prefix" @value={{this.sqsPrefix}} disabled={{this.isLoading}} />
+        <InputGroup @name="SQS Queue" @value={{this.sqsQueue}} disabled={{this.isLoading}} />
+        <InputGroup @name="SQS Suffix" @value={{this.sqsSuffix}} disabled={{this.isLoading}} />
+    {{/if}}
+</ContentPanel>
+
+<div class="mt-3 flex items-center justify-end">
+    <Button @type="primary" @size="lg" @icon="save" @text="Save Changes" @onClick={{this.save}} @disabled={{this.isLoading}} @isLoading={{this.isLoading}} />
+</div>

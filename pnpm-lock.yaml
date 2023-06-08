@@ -67,6 +67,9 @@ dependencies:
   postcss-nth-list:
     specifier: ^1.0.2
     version: 1.0.2
+  randomuuid:
+    specifier: ^1.0.1
+    version: 1.0.1
 
 devDependencies:
   '@ember/optional-features':
@@ -13176,6 +13179,11 @@ packages:
     dependencies:
       randombytes: 2.1.0
       safe-buffer: 5.2.1
+
+  /randomuuid@1.0.1:
+    resolution: {integrity: sha512-pqtYSFuuFObmeS94Gpv0Sf+05G56TE4dYxhZ/q4OsJ3o11KHTGlaSVb9/bu5zsfCVWQMoZ9zUDLpMC+YhngfoQ==}
+    engines: {node: '>=12.0.0'}
+    dev: false
 
   /range-parser@1.2.1:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
