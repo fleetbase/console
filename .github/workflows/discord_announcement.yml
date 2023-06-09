@@ -15,13 +15,13 @@ jobs:
         with:
           fetch-depth: 0 # this is required to fetch all tags
 
-      - name: Get commit message
-        id: commit
-        run: echo "::set-output name=message::$(git log --format=%B -n 1 ${{ github.ref }})"
+      - name: Get tag message
+        id: tag
+        run: echo "::set-output name=message::$(git for-each-ref refs/tags --format='%(contents)' ${{ github.ref }})"
 
       - name: Send message to Discord
         uses: appleboy/discord-action@master
         with:
           webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
           webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
-          args: "📦 New Console Version Released! 🎉: ${{ steps.commit.outputs.message }}"
+          args: "📦 New Console Version Released! 🎉: ${{ steps.tag.outputs.message }}"
