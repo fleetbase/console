@@ -110,7 +110,7 @@ function randomUUID(options) {
     return String.fromCharCode.apply(null, uuid);
 }
 
-export function initialize(application) {
+export function initialize() {
     if (typeof window.crypto.randomUUID === 'undefined') {
         window.crypto.randomUUID = randomUUID;
     }

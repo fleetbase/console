@@ -66,7 +66,7 @@ export default class ConfigureQueueComponent extends Component {
                     queue: this.beanstalkdQueue,
                 },
             })
-            .then((response) => {
+            .then(() => {
                 this.notifications.success('Queue configuration saved.');
             })
             .finally(() => {

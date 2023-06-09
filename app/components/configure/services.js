@@ -78,7 +78,7 @@ export default class ConfigureServicesComponent extends Component {
                     from: this.twilioFrom,
                 },
             })
-            .then((response) => {
+            .then(() => {
                 this.notifications.success('Services configuration saved.');
             })
             .finally(() => {

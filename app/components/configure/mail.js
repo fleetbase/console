@@ -98,7 +98,7 @@ export default class ConfigureMailComponent extends Component {
                 },
                 smtp: this.serializeSmtpConfig(),
             })
-            .then((response) => {
+            .then(() => {
                 this.notifications.success('Mail configuration saved.');
             })
             .finally(() => {

@@ -59,7 +59,7 @@ export default class ConfigureFilesystemComponent extends Component {
                     endpoint: this.s3Endpoint,
                 },
             })
-            .then((response) => {
+            .then(() => {
                 this.notifications.success('Filesystem configuration saved.');
             })
             .finally(() => {
