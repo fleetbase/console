@@ -1,6 +1,6 @@
 {
     "name": "@fleetbase/console",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "private": true,
     "description": "Fleetbase Console",
     "repository": "",
@@ -44,8 +44,7 @@
         "fleetbase-extensions-indexer": "^0.0.2",
         "postcss-at-rules-variables": "^0.3.0",
         "postcss-custom-properties": "^12.1.9",
-        "postcss-nth-list": "^1.0.2",
-        "randomuuid": "^1.0.1"
+        "postcss-nth-list": "^1.0.2"
     },
     "devDependencies": {
         "@ember/optional-features": "^2.0.0",

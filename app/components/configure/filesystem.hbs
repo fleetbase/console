@@ -1,6 +1,6 @@
 <ContentPanel @title="Filesystem" @open={{true}} @pad={{true}} @panelBodyClass="bg-white dark:bg-gray-800">
     <InputGroup @name="Driver" @helpText="Select the default filesystem driver for Fleetbase to use.">
-        <Select @options={{this.disks}} @value={{this.driver}} @onSelect={{fn this.setDriver}} @placeholder="Select filesystem driver" class="w-full" disabled={{this.isLoading}} />
+        <Select @options={{this.disks}} @value={{this.driver}} @onSelect={{this.setDriver}} @placeholder="Select filesystem driver" class="w-full" disabled={{this.isLoading}} />
     </InputGroup>
     {{#if (eq this.driver "s3")}}
         <InputGroup @name="S3 Bucket" @value={{this.s3Bucket}} disabled={{this.isLoading}} />

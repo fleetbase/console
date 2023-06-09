@@ -1,0 +1,31 @@
+name: Discord Announcement
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+
+jobs:
+  discord_announcement:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # this is required to fetch all tags
+
+    - name: Get commit message
+      id: commit
+      run: echo "::set-output name=message::$(git log --format=%B -n 1 ${{ github.ref }})"
+
+    - name: Send message to Discord
+      uses: appleboy/discord-webhook-notifier@v1.1.2
+      with:
+        webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
+        webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+        color: 0x4E5D94
+        title: "📦 New Console Version Released! 🎉"
+        description: ${{ steps.commit.outputs.message }}
+        username: GitHub Actions

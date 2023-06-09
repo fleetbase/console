@@ -63,20 +63,20 @@ export default class ConfigureServicesComponent extends Component {
                 aws: {
                     key: this.awsKey,
                     secret: this.awsSecret,
-                    region: this.awsRegion
+                    region: this.awsRegion,
                 },
                 ipinfo: {
-                    api_key: this.ipinfoApiKey
+                    api_key: this.ipinfoApiKey,
                 },
                 googleMaps: {
                     api_key: this.googleMapsApiKey,
-                    locale: this.googleMapsLocale
+                    locale: this.googleMapsLocale,
                 },
                 twilio: {
                     sid: this.twilioSid,
                     token: this.twilioToken,
-                    from: this.twilioFrom
-                }
+                    from: this.twilioFrom,
+                },
             })
             .then((response) => {
                 this.notifications.success('Services configuration saved.');
