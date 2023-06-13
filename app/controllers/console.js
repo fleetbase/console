@@ -45,11 +45,32 @@ export default class ConsoleController extends Controller {
     @service notifications;
 
     /**
+     * Inject the `router` service.
+     *
+     * @var {Service}
+     */
+    @service router;
+
+    /**
      * Authenticated user organizations.
      *
      * @var {Array}
      */
     @tracked organizations = [];
+
+    /**
+     * Whether or not to hide the sidebar.
+     *
+     * @var {Boolean}
+     */
+    @tracked hideSidebar = true;
+
+    /**
+     * Sidebar Context Controls
+     *
+     * @var {SidebarContext}
+     */
+    @tracked sidebarContext;
 
     /**
      * Installed extensions.
@@ -66,6 +87,38 @@ export default class ConsoleController extends Controller {
      * @var {Model}
      */
     @alias('currentUser.user') user;
+
+    /**
+     * Creates an instance of ConsoleController.
+     * @memberof ConsoleController
+     */
+    constructor() {
+        super(...arguments);
+
+        this.router.on('routeDidChange', (transition) => {
+            if (this.sidebarContext) {
+                if (transition.to.name === 'console.home') {
+                    this.sidebarContext.hideNow();
+                } else {
+                    this.sidebarContext.show();
+                }
+            }
+        });
+    }
+
+    /**
+     * Sets the sidebar context
+     *
+     * @param {SidebarContext} sidebarContext
+     * @memberof ConsoleController
+     */
+    @action setSidebarContext(sidebarContext) {
+        this.sidebarContext = sidebarContext;
+
+        if (this.router.currentRouteName === 'console.home') {
+            this.sidebarContext.hideNow();
+        }
+    }
 
     /**
      * Action handler.
@@ -183,6 +236,14 @@ export default class ConsoleController extends Controller {
                         this.notifications.serverError(error);
                     });
             },
+        });
+    }
+
+    @action viewChangelog() {
+        this.modalsManager.show('modals/changelog', {
+            title: 'Changelog',
+            acceptButtonText: 'OK',
+            hideDeclineButton: true,
         });
     }
 }

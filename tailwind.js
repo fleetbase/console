@@ -17,6 +17,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            gridTemplateColumns: {
+                span: ['span 1', 'span 2', 'span 3', 'span 4', 'span 5', 'span 6', 'span 7', 'span 8', 'span 9', 'span 10', 'span 11', 'span 12'],
+            },
             ringColor: {
                 DEFAULT: 'transparent',
             },

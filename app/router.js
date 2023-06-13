@@ -16,7 +16,7 @@ Router.map(function () {
         this.route('verify-email');
     });
     this.route('console', { path: '/' }, function () {
-        this.route('home');
+        this.route('home', { path: '/' });
         this.route('extensions');
         this.route('account', function () {});
         this.route('settings', function () {});
