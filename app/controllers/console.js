@@ -97,7 +97,7 @@ export default class ConsoleController extends Controller {
 
         this.router.on('routeDidChange', (transition) => {
             if (this.sidebarContext) {
-                if (transition.to.name === 'console.home') {
+                if (transition.to.name === 'console.home' || transition.to.name === 'console.extensions') {
                     this.sidebarContext.hideNow();
                 } else {
                     this.sidebarContext.show();
@@ -115,7 +115,7 @@ export default class ConsoleController extends Controller {
     @action setSidebarContext(sidebarContext) {
         this.sidebarContext = sidebarContext;
 
-        if (this.router.currentRouteName === 'console.home') {
+        if (this.router.currentRouteName === 'console.home' || this.router.currentRouteName === 'console.extensions') {
             this.sidebarContext.hideNow();
         }
     }
