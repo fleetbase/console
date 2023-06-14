@@ -5,26 +5,26 @@ dependencies:
     specifier: ^0.4.1
     version: 0.4.1(ember-source@4.6.0)
   '@fleetbase/dev-engine':
-    specifier: ^0.0.9
-    version: 0.0.9(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0)
+    specifier: ^0.1.0
+    version: 0.1.0(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0)
   '@fleetbase/ember-core':
-    specifier: ^0.0.6
-    version: 0.0.6(@babel/core@7.22.5)(ember-fetch@8.1.1)(postcss@8.4.21)(webpack@5.74.0)
+    specifier: ^0.0.7
+    version: 0.0.7(@babel/core@7.22.5)(ember-fetch@8.1.1)(postcss@8.4.21)(webpack@5.74.0)
   '@fleetbase/ember-ui':
     specifier: ^0.0.8
     version: 0.0.8(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-source@4.6.0)(rollup@3.25.1)(webpack@5.74.0)
   '@fleetbase/fleetops-data':
-    specifier: ^0.0.3
-    version: 0.0.3
+    specifier: ^0.0.4
+    version: 0.0.4
   '@fleetbase/fleetops-engine':
-    specifier: ^0.1.1
-    version: 0.1.1(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0)
+    specifier: ^0.1.2
+    version: 0.1.2(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0)
   '@fleetbase/leaflet-routing-machine':
     specifier: ^3.2.15
     version: 3.2.15
   '@fleetbase/storefront-engine':
-    specifier: ^0.0.8
-    version: 0.0.8(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0)
+    specifier: ^0.0.9
+    version: 0.0.9(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0)
   '@fortawesome/ember-fontawesome':
     specifier: ^0.4.1
     version: 0.4.1(rollup@3.25.1)
@@ -2109,13 +2109,13 @@ packages:
       - supports-color
     dev: true
 
-  /@fleetbase/dev-engine@0.0.9(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0):
-    resolution: {integrity: sha512-xIWc/a0KXt8qKdCR1ZDh1S0vdw7UncA+WcVKytG3ZuVeRM+WHC9oYkKGQMbTW030xgr4xXDIVkzgXmHm6Nrigg==}
+  /@fleetbase/dev-engine@0.1.0(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0):
+    resolution: {integrity: sha512-6mw83Q6FkRJo/ih8fixDKfQo3XuE7kg4sLjkQOXi88lwyGWTnowTyDoRHMHF6Y4Lt19WEWWZDGVKKH4jn3pOYg==}
     engines: {node: 14.* || >= 16}
     peerDependencies:
       ember-engines: ^0.8.23
     dependencies:
-      '@fleetbase/ember-core': 0.0.6(@babel/core@7.22.5)(ember-fetch@8.1.1)(postcss@8.4.21)(webpack@5.74.0)
+      '@fleetbase/ember-core': 0.0.7(@babel/core@7.22.5)(ember-fetch@8.1.1)(postcss@8.4.21)(webpack@5.74.0)
       '@fleetbase/ember-ui': 0.0.8(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-source@4.6.0)(rollup@3.25.1)(webpack@5.74.0)
       '@fortawesome/ember-fontawesome': 0.4.1(rollup@3.25.1)
       '@fortawesome/fontawesome-svg-core': 6.4.0
@@ -2147,8 +2147,8 @@ packages:
       - webpack-command
     dev: false
 
-  /@fleetbase/ember-core@0.0.6(@babel/core@7.22.5)(ember-fetch@8.1.1)(postcss@8.4.21)(webpack@5.74.0):
-    resolution: {integrity: sha512-/m1UIIOKGn0kX74tct2gV1Nz8Fr1URyQia7p8QfjaiguLqjxOf1Php85RJaCZMUEy0XZ3URHTZYeLoDxK2/+Qg==}
+  /@fleetbase/ember-core@0.0.7(@babel/core@7.22.5)(ember-fetch@8.1.1)(postcss@8.4.21)(webpack@5.74.0):
+    resolution: {integrity: sha512-sHByATuNUjgihChE5/Pa2U35emlRVyAbvkOk+fSC1d3mX3sTm7mpsM+Z+gW8+ohbjCY+U3daWFio2458pntM0w==}
     engines: {node: 14.* || >= 16}
     dependencies:
       date-fns: 2.30.0
@@ -2256,8 +2256,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@fleetbase/fleetops-data@0.0.3:
-    resolution: {integrity: sha512-Gnr1MVM1qE3GaPApMx7FNp2Uf3YPl4MqiA2fjrPOVrewJEVnJVe63t7GE5dlfKmRTFdDx75i3zZQIFI2HfPUXA==}
+  /@fleetbase/fleetops-data@0.0.4:
+    resolution: {integrity: sha512-knI0bY4fgN/EaXp4tzaBZgwiWh/6gcuZtx7TTZJWDojXD13N/eZPErzy9FGd+zqeW3OsOQKE06TA87dslWm7Ng==}
     engines: {node: 14.* || >= 16}
     dependencies:
       date-fns: 2.30.0
@@ -2267,15 +2267,15 @@ packages:
       - supports-color
     dev: false
 
-  /@fleetbase/fleetops-engine@0.1.1(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0):
-    resolution: {integrity: sha512-kCPAjh8iAy3/YZ0RKI9VMjNV1XfhKfAzHhyxHIMKd3RIYmg/P4NvzwM8GF9B1FHt9zi6WeUKhg6sHj9C7gi+0A==}
+  /@fleetbase/fleetops-engine@0.1.2(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0):
+    resolution: {integrity: sha512-O9ZYpPQGQZp16NItHYVm12HMpAWl3qkqseL5VJlGhDLgnxibBZwe3ZJfOV1cK1XfOi2UJjaBP2Nc7omt51cjuQ==}
     engines: {node: 14.* || >= 16}
     peerDependencies:
       ember-engines: ^0.8.23
     dependencies:
-      '@fleetbase/ember-core': 0.0.6(@babel/core@7.22.5)(ember-fetch@8.1.1)(postcss@8.4.21)(webpack@5.74.0)
+      '@fleetbase/ember-core': 0.0.7(@babel/core@7.22.5)(ember-fetch@8.1.1)(postcss@8.4.21)(webpack@5.74.0)
       '@fleetbase/ember-ui': 0.0.8(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-source@4.6.0)(rollup@3.25.1)(webpack@5.74.0)
-      '@fleetbase/fleetops-data': 0.0.3
+      '@fleetbase/fleetops-data': 0.0.4
       '@fleetbase/leaflet-routing-machine': 3.2.15
       '@fortawesome/ember-fontawesome': 0.4.1(rollup@3.25.1)
       '@fortawesome/fontawesome-svg-core': 6.4.0
@@ -2326,13 +2326,13 @@ packages:
       osrm-text-instructions: 0.13.4
     dev: false
 
-  /@fleetbase/storefront-engine@0.0.8(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0):
-    resolution: {integrity: sha512-fH1Lhm8/jhCNIeHETYUvpSUceoO+x3QFR9k5EpOwV+QMHt6NrjqoyyOSRGOpUkMh4aja3CQoMbsJt0C7q7KKqg==}
+  /@fleetbase/storefront-engine@0.0.9(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0):
+    resolution: {integrity: sha512-mcGD1ctHHpEJX0BwVm0Uyof027Q6PUzkiKsZTCkMfAJeKWsQjKp/a9XYnjczEggUbbJcOUcZ5AKxzGNIBPFIRg==}
     engines: {node: 14.* || >= 16}
     peerDependencies:
       ember-engines: ^0.8.23
     dependencies:
-      '@fleetbase/ember-core': 0.0.6(@babel/core@7.22.5)(ember-fetch@8.1.1)(postcss@8.4.21)(webpack@5.74.0)
+      '@fleetbase/ember-core': 0.0.7(@babel/core@7.22.5)(ember-fetch@8.1.1)(postcss@8.4.21)(webpack@5.74.0)
       '@fleetbase/ember-ui': 0.0.8(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-source@4.6.0)(rollup@3.25.1)(webpack@5.74.0)
       '@fleetbase/fleetops-data': 0.0.2
       '@fortawesome/ember-fontawesome': 0.4.1(rollup@3.25.1)
