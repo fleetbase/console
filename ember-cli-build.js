@@ -2,6 +2,7 @@
 
 /** eslint-disable node/no-unpublished-require */
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const Funnel = require('broccoli-funnel');
 const FleetbaseExtensionsIndexer = require('fleetbase-extensions-indexer');
 const postcssImport = require('postcss-import');
 const postcssPresetEnv = require('postcss-preset-env');
@@ -53,6 +54,10 @@ module.exports = function (defaults) {
     });
 
     let extensions = new FleetbaseExtensionsIndexer();
+    let socketClusterAssets = new Funnel('node_modules/socketcluster-client', {
+        files: ['socketcluster-client.min.js'],
+        destDir: '/assets',
+    });
 
     // Use `app.import` to add additional libraries to the generated
     // output files.
@@ -67,5 +72,5 @@ module.exports = function (defaults) {
     // please specify an object with the list of modules as keys
     // along with the exports of each module as its value.
 
-    return app.toTree([extensions]);
+    return app.toTree([extensions, socketClusterAssets]);
 };

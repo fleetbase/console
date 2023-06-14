@@ -41,6 +41,7 @@ module.exports = {
                     'postcss-mixins',
                     'postcss-conditionals-renewed',
                     'autoprefixer',
+                    'broccoli-funnel',
                     'ember-auto-import',
                 ],
             },

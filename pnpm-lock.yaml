@@ -102,6 +102,9 @@ devDependencies:
   broccoli-asset-rev:
     specifier: ^3.0.0
     version: 3.0.0
+  broccoli-funnel:
+    specifier: ^3.0.8
+    version: 3.0.8
   date-fns:
     specifier: ^2.29.2
     version: 2.29.2
