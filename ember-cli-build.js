@@ -17,7 +17,7 @@ module.exports = function (defaults) {
         storeConfigInMeta: false,
 
         fingerprint: {
-            exclude: ['leaflet/', 'leaflet-images/'],
+            exclude: ['leaflet/', 'leaflet-images/', 'socketcluster-client.min.js'],
         },
 
         'ember-simple-auth': {
