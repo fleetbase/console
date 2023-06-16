@@ -25,12 +25,6 @@ export default class ConsoleRoute extends Route {
      */
     @service currentUser;
 
-    @action willTransition(transition) {
-        if (transition.to.name.startsWith('console.fleet-ops')) {
-            import('@fleetbase/leaflet-routing-machine');
-        }
-    }
-
     /**
      * Require authentication to access all `console` routes.
      *

@@ -1,57 +1,23 @@
-# @fleetbase/console
+<div id="hero">
+  <p align="center" dir="auto">
+      <a href="https://fleetbase.io" rel="nofollow">
+        <img src="https://user-images.githubusercontent.com/58805033/191936702-fed04b0f-7966-4041-96d0-95e27bf98248.png" alt="Fleetbase logo" width="600" height="140" style="max-width: 100%;">
+      </a>
+    </p>
+    <h1 align="center" dir="auto">
+      Fleetbase Console
+    </h1>
+    <hr />
+</div>
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+# ⭐️ Overview
 
-## Prerequisites
+<p>The Fleetbase Console, a vital component of the Fleetbase Platform, serves as the graphical user interface that facilitates interaction with all Fleetbase extensions. It's architecturally designed to be lightweight, primarily employing Ember Engines for its operational foundation. Ember Engines, a scalable development paradigm for ambitious web applications, allow the Console to dynamically load and manage extensions, ensuring a streamlined and efficient user experience.</p>
 
-You will need the following things properly installed on your computer.
+<p>The responsibilities of the Console are kept minimalistic to maintain its performance and agility. The Console's key responsibilities encompass administration management, configuration of organization and user settings, and establishing a robust connection to the Fleetbase extensions repository. In its administrative capacity, it provides an intuitive interface for configuring the Fleetbas instance.</p>
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/)
-* [Yarn](https://yarnpkg.com/)
-* [Ember CLI](https://cli.emberjs.com/release/)
-* [Google Chrome](https://google.com/chrome/)
+<p>Lastly, the Console plays a pivotal role in connecting to the Fleetbase extensions repository. This provides the flexibility to add, update, or remove extensions as per the organizational needs and preferences, all while ensuring the seamless operation and integrity of the Fleetbase Platform.</p>
 
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd console`
-* `yarn install`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `yarn lint`
-* `yarn lint:fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://cli.emberjs.com/release/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+<p align="center" dir="auto">
+  <img src="https://flb-assets.s3.ap-southeast-1.amazonaws.com/github/dark-light-layered-screenshots.png" alt="Fleetbase Console" width="600" style="max-width: 100%;" />
+</p>
