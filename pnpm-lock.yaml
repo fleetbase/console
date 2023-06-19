@@ -17,8 +17,8 @@ dependencies:
     specifier: ^0.0.5
     version: 0.0.5
   '@fleetbase/fleetops-engine':
-    specifier: ^0.1.4
-    version: 0.1.4(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0)
+    specifier: ^0.1.5
+    version: 0.1.5(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0)
   '@fleetbase/leaflet-routing-machine':
     specifier: ^3.2.16
     version: 3.2.16
@@ -2252,8 +2252,8 @@ packages:
       - supports-color
     dev: false
 
-  /@fleetbase/fleetops-engine@0.1.4(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0):
-    resolution: {integrity: sha512-dZv0NcQI8hbSsyHtIb9S0jF2LiUB6zIcWFQn4tNs33DgNcTRBooZFaG6hhqxTPq8SyLHwZAJj451Mx6RVUwT6w==}
+  /@fleetbase/fleetops-engine@0.1.5(@babel/core@7.22.5)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.25.1)(webpack@5.74.0):
+    resolution: {integrity: sha512-fAVLdXVKPyuBSXM1mYY7ucHBmwf+AQI+rwYCEGx+e83vdkIrxQl0PRA5G1rBBRpIYZcabpFetLEw3M161a/onA==}
     engines: {node: 14.* || >= 16}
     peerDependencies:
       ember-engines: ^0.8.23
