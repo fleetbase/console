@@ -10,7 +10,7 @@
 </div>
 
 <p align="center" dir="auto">
-  <img src="https://flb-assets.s3.ap-southeast-1.amazonaws.com/github/dark-light-layered-screenshots.png" alt="Fleetbase Console" width="600" style="max-width: 100%;" />
+  <img src="https://user-images.githubusercontent.com/816371/246987420-deef79fa-e30c-4ce9-8a04-0dee990ffd9d.png" alt="Fleetbase Console" width="600" style="max-width: 100%;" />
 </p>
 
 # ⭐️ Overview
