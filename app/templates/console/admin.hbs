@@ -2,6 +2,7 @@
 
 <EmberWormhole @to="sidebar-menu-items">
     <Layout::Sidebar::Item @route="console.admin.index" @icon="rectangle-list">Overview</Layout::Sidebar::Item>
+    <Layout::Sidebar::Item @route="console.admin.branding" @icon="palette">Branding</Layout::Sidebar::Item>
     <Layout::Sidebar::Panel @open={{true}} @title="System Configuration">
         <Layout::Sidebar::Item @route="console.admin.config.services" @icon="bell-concierge">Services</Layout::Sidebar::Item>
         <Layout::Sidebar::Item @route="console.admin.config.mail" @icon="envelope">Mail</Layout::Sidebar::Item>

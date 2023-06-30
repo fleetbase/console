@@ -13,12 +13,11 @@
             {{else}}
                 <ul class="space-y-2">
                     {{#each this.posts as |post|}}
-                        <li class="text-sm">
-                            <a href={{post.link}} target="_blog" class="text-black dark:text-gray-200">
-                                <span>{{post.title}}</span>
+                        <li class="text-sm flex">
+                            <a href={{post.link}} target="_blog" class="text-black truncate max-w-lg dark:text-gray-200">
+                                <span class="truncate">{{post.title}}</span>
                             </a>
-                            <span class="mx-0.5 text-gray-900 dark:text-gray-200">-</span>
-                            <span class="text-gray-900 dark:text-gray-400">{{post.pubDate}}</span>
+                            <span class="ml-1 text-gray-900 dark:text-gray-400">- {{post.pubDate}}</span>
                         </li>
                     {{/each}}
                 </ul>

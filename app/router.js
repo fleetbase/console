@@ -42,6 +42,7 @@ Router.map(function () {
                 this.route('queue');
                 this.route('services');
             });
+            this.route('branding');
         });
     });
     this.route('install');

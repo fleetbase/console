@@ -5,6 +5,13 @@ import '@fleetbase/leaflet-routing-machine';
 
 export default class ConsoleRoute extends Route {
     /**
+     * Inject the `store` service
+     *
+     * @var {Service}
+     */
+    @service store;
+
+    /**
      * Inject the `fetch` service
      *
      * @var {Service}
@@ -36,6 +43,16 @@ export default class ConsoleRoute extends Route {
         this.session.requireAuthentication(transition, 'auth.login');
 
         return this.session.promiseCurrentUser(transition);
+    }
+
+    /**
+     * Get the branding settings.
+     *
+     * @return {BrandModel}
+     * @memberof ConsoleRoute
+     */
+    model() {
+        return this.store.findRecord('brand', 1);
     }
 
     /**

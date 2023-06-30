@@ -11,6 +11,7 @@ export default class ConsoleAccountIndexController extends Controller {
      * @memberof ConsoleAccountIndexController
      */
     @service currentUser;
+
     /**
      * Inject the `fetch` service.
      *
