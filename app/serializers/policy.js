@@ -3,7 +3,7 @@ import { EmbeddedRecordsMixin } from '@ember-data/serializer/rest';
 
 export default class PolicySerializer extends ApplicationSerializer.extend(EmbeddedRecordsMixin) {
     primaryKey = 'id';
-    
+
     /**
      * Embedded relationship attributes
      *

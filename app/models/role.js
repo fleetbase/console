@@ -1,7 +1,6 @@
 import Model, { attr, hasMany } from '@ember-data/model';
 import { computed } from '@ember/object';
 import { format, formatDistanceToNow } from 'date-fns';
-import autoSerialize from '../utils/auto-serialize';
 
 export default class RoleModel extends Model {
     /** @ids */

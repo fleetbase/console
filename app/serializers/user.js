@@ -8,7 +8,7 @@ export default class UserSerializer extends ApplicationSerializer {
      * @param {Object} options
      * @return {Object} json
      */
-    serialize(snapshot) {
+    serialize() {
         const json = super.serialize(...arguments);
 
         // delete the password always

@@ -94,16 +94,8 @@ export default class PermissionModel extends Model {
         let resourcePreposition = getPermissionAction(this.name) === '*' && resourceName ? 'with' : '';
         let extensionName = humanize(this.extensionName);
         let extensionPreposition = 'on';
-        let descriptionParts = [
-            'Permission',
-            actionPreposition,
-            actionName,
-            resourcePreposition,
-            resourceName,
-            extensionPreposition,
-            extensionName
-        ];
-        
+        let descriptionParts = ['Permission', actionPreposition, actionName, resourcePreposition, resourceName, extensionPreposition, extensionName];
+
         return descriptionParts.join(' ');
     }
 
