@@ -32,6 +32,10 @@ Router.map(function () {
             as: 'developers',
             path: 'developers',
         });
+        this.mount('@fleetbase/iam-engine', {
+            as: 'iam',
+            path: 'iam',
+        });
         this.route('admin', function () {
             this.route('config', function () {
                 this.route('database');

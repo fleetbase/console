@@ -4,7 +4,6 @@ import { format, formatDistanceToNow } from 'date-fns';
 
 export default class PolicyModel extends Model {
     /** @ids */
-    // @attr('string') id;
     @attr('string') company_uuid;
 
     /** @relationships */
@@ -23,11 +22,15 @@ export default class PolicyModel extends Model {
     @attr('date') updated_at;
 
     /** @methods */
-    toJson() {
+    toJSON() {
         return this.serialize();
     }
 
     /** @computed */
+    @computed('permissions') get permissionsArray() {
+        return this.permissions.toArray();
+    }
+
     @computed('updated_at') get updatedAgo() {
         return formatDistanceToNow(this.updated_at);
     }
