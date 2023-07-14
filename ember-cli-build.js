@@ -20,6 +20,12 @@ module.exports = function (defaults) {
             exclude: ['leaflet/', 'leaflet-images/', 'socketcluster-client.min.js'],
         },
 
+        liveReload: {
+            options: {
+                ignore: ['app/router.js'],
+            },
+        },
+
         'ember-simple-auth': {
             useSessionSetupMethod: true,
         },

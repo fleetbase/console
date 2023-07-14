@@ -18,12 +18,8 @@ Router.map(function () {
     this.route('console', { path: '/' }, function () {
         this.route('home', { path: '/' });
         this.route('extensions');
-        this.route('account', function () {
-            this.route('virtual', { path: '/:slug' });
-        });
-        this.route('settings', function () {
-            this.route('virtual', { path: '/:slug' });
-        });
+        this.route('account');
+        this.route('settings');
         this.route('virtual', { path: '/:slug/:view' });
         this.route('admin', function () {
             this.route('config', function () {
@@ -38,32 +34,6 @@ Router.map(function () {
             this.route('branding');
             this.route('virtual', { path: '/:slug/:view' });
         });
-
-        this.mount('@fleetbase/dev-engine', {
-            as: 'developers',
-            path: 'developers',
-        });
-
-        this.mount('@fleetbase/billing-engine', {
-            as: 'billing',
-            path: 'billing',
-        });
-
-        this.mount('@fleetbase/fleetops-engine', {
-            as: 'fleet-ops',
-            path: 'fleet-ops',
-        });
-
-        this.mount('@fleetbase/iam-engine', {
-            as: 'iam',
-            path: 'iam',
-        });
-
-        this.mount('@fleetbase/storefront-engine', {
-            as: 'storefront',
-            path: 'storefront',
-        });
-        this.route('virtual');
     });
     this.route('install');
 });
