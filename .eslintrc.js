@@ -12,6 +12,7 @@ module.exports = {
     },
     plugins: ['ember'],
     extends: ['eslint:recommended', 'plugin:ember/recommended', 'plugin:prettier/recommended'],
+    ignorePatterns: ['prebuild.js'],
     env: {
         browser: true,
     },
