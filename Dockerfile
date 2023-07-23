@@ -11,11 +11,14 @@ ENV PNPM_HOME /root/.pnpm
 # Add the pnpm global bin to the PATH
 ENV PATH /root/.pnpm/bin:$PATH
 
-# Copy pnpm-lock.yaml (or package.json and shrinkwrap.yaml) into the directory /app in the container
+# Copy pnpm-lock.yaml (or package.json) into the directory /app in the container
 COPY console/package.json console/pnpm-lock.yaml ./
 
 # Install global dependencies
 RUN npm install -g ember-cli pnpm 
+
+# Install git
+RUN apk update && apk add git
 
 # Install app dependencies
 RUN pnpm install

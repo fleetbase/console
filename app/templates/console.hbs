@@ -1,6 +1,6 @@
 {{page-title "Console"}}
 <Layout::Container>
-    <Layout::Header @brand={{@model}} @user={{this.user}} @organizations={{this.organizations}} @extensions={{this.extensions}} @onAction={{this.onAction}} />
+    <Layout::Header @brand={{@model}} @user={{this.user}} @organizations={{this.organizations}} @menuItems={{this.universe.headerMenuItems}} @onAction={{this.onAction}} />
     <Layout::Main>
         <Layout::Sidebar @onSetup={{this.setSidebarContext}}>
             <div class="next-sidebar-content-inner">

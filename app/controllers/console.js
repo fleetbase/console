@@ -52,6 +52,13 @@ export default class ConsoleController extends Controller {
     @service router;
 
     /**
+     * Inject the `universe` service.
+     *
+     * @var {Service}
+     */
+    @service universe;
+
+    /**
      * Authenticated user organizations.
      *
      * @var {Array}
@@ -114,6 +121,7 @@ export default class ConsoleController extends Controller {
      */
     @action setSidebarContext(sidebarContext) {
         this.sidebarContext = sidebarContext;
+        this.universe.sidebarContext = sidebarContext;
 
         if (this.router.currentRouteName === 'console.home' || this.router.currentRouteName === 'console.extensions') {
             this.sidebarContext.hideNow();

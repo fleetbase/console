@@ -28,6 +28,7 @@
                                 </a>
                             </FileUpload>
                         </div>
+                        <a href="javascript:;" class="text-danger text-xs mt-1" {{on "click" (fn this.unset "icon_url" "/images/icon.png")}}>Reset to default</a>
                     </div>
                     <div class="input-group">
                         <label>Logo</label>
@@ -51,6 +52,7 @@
                                 </a>
                             </FileUpload>
                         </div>
+                        <a href="javascript:;" class="text-danger text-xs mt-1" {{on "click" (fn this.unset "logo_url" "/images/fleetbase-logo-svg.svg")}}>Reset to default</a>
                     </div>
                 </form>
             </ContentPanel>

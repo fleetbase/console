@@ -26,9 +26,19 @@ export default class ConsoleAdminBrandingController extends Controller {
     @tracked isLoading = false;
 
     /**
+     * Unset a branding settings
+     *
+     * @param {String} key
+     * @memberof ConsoleAdminBrandingController
+     */
+    @action unset(key, newValue = null) {
+        this.model[key] = newValue;
+    }
+
+    /**
      * Save branding settings.
      *
-     * @return {*}
+     * @return {Promise}
      * @memberof ConsoleAdminBrandingController
      */
     @action save() {
