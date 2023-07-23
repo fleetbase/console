@@ -18,8 +18,12 @@ Router.map(function () {
     this.route('console', { path: '/' }, function () {
         this.route('home', { path: '/' });
         this.route('extensions');
-        this.route('account');
-        this.route('settings');
+        this.route('account', function () {
+            this.route('virtual', { path: '/:slug/:view' });
+        });
+        this.route('settings', function () {
+            this.route('virtual', { path: '/:slug/:view' });
+        });
         this.route('virtual', { path: '/:slug/:view' });
         this.route('admin', function () {
             this.route('config', function () {

@@ -19,10 +19,10 @@ Router.map(function () {
         this.route('home', { path: '/' });
         this.route('extensions');
         this.route('account', function () {
-            this.route('virtual', { path: '/:slug' });
+            this.route('virtual', { path: '/:slug/:view' });
         });
         this.route('settings', function () {
-            this.route('virtual', { path: '/:slug' });
+            this.route('virtual', { path: '/:slug/:view' });
         });
         this.route('virtual', { path: '/:slug/:view' });
         this.route('admin', function () {
@@ -39,31 +39,30 @@ Router.map(function () {
             this.route('virtual', { path: '/:slug/:view' });
         });
 
-        this.mount('@fleetbase/dev-engine', {
-            as: 'developers',
-            path: 'developers',
-        });
-
         this.mount('@fleetbase/billing-engine', {
             as: 'billing',
-            path: 'billing',
+            path: 'billing'
+        });
+
+        this.mount('@fleetbase/dev-engine', {
+            as: 'developers',
+            path: 'developers'
         });
 
         this.mount('@fleetbase/fleetops-engine', {
             as: 'fleet-ops',
-            path: 'fleet-ops',
-        });
-
-        this.mount('@fleetbase/iam-engine', {
-            as: 'iam',
-            path: 'iam',
+            path: 'fleet-ops'
         });
 
         this.mount('@fleetbase/storefront-engine', {
             as: 'storefront',
-            path: 'storefront',
+            path: 'storefront'
         });
-        this.route('virtual');
+
+        this.mount('@fleetbase/iam-engine', {
+            as: 'iam',
+            path: 'iam'
+        });
     });
     this.route('install');
 });
