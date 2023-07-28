@@ -44,6 +44,11 @@ Router.map(function () {
             path: 'developers'
         });
 
+        this.mount('@fleetbase/pallet-engine', {
+            as: 'pallet',
+            path: 'pallet'
+        });
+
         this.mount('@fleetbase/fleetops-engine', {
             as: 'fleet-ops',
             path: 'fleet-ops'
@@ -52,11 +57,6 @@ Router.map(function () {
         this.mount('@fleetbase/iam-engine', {
             as: 'iam',
             path: 'iam'
-        });
-
-        this.mount('@fleetbase/pallet-engine', {
-            as: 'pallet',
-            path: 'pallet'
         });
 
         this.mount('@fleetbase/storefront-engine', {
