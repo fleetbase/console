@@ -1,4 +1,7 @@
 'use strict';
+const toBoolean = require('./utils/to-boolean');
+const getenv = require('./utils/getenv');
+const fixApiHost = require('./utils/fix-api-host');
 
 module.exports = function (environment) {
     let ENV = {
@@ -19,7 +22,7 @@ module.exports = function (environment) {
         },
 
         API: {
-            host: getenv('API_HOST'),
+            host: fixApiHost(getenv('API_HOST'), getenv('API_SECURE')),
             namespace: getenv('API_NAMESPACE', 'int/v1'),
         },
 
@@ -31,7 +34,7 @@ module.exports = function (environment) {
         socket: {
             path: getenv('SOCKETCLUSTER_PATH', '/socketcluster/'),
             hostname: getenv('SOCKETCLUSTER_HOST'),
-            secure: getenv('SOCKETCLUSTER_SECURE', false),
+            secure: toBoolean(getenv('SOCKETCLUSTER_SECURE', false)),
             port: getenv('SOCKETCLUSTER_PORT', 38000),
         },
 
@@ -82,7 +85,3 @@ module.exports = function (environment) {
 
     return ENV;
 };
-
-function getenv(variable, defaultValue = null) {
-    return process.env[variable] !== undefined ? process.env[variable] : defaultValue;
-}
