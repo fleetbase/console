@@ -14,11 +14,17 @@ ENV PATH /root/.pnpm/bin:$PATH
 # Copy pnpm-lock.yaml (or package.json) into the directory /app in the container
 COPY console/package.json console/pnpm-lock.yaml ./
 
+# Copy over .npmrc if applicable
+COPY console/.npmr[c] ./
+
 # Install global dependencies
 RUN npm install -g ember-cli pnpm 
 
 # Install git
-RUN apk update && apk add git
+RUN apk update && apk add git openssh-client
+
+# Trust GitHub's RSA host key
+RUN mkdir -p -m 0600 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 # Install app dependencies
 RUN pnpm install

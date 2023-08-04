@@ -29,6 +29,28 @@ jobs:
       with:
         version: latest
 
+    - name: Get pnpm Store Directory
+      id: pnpm-cache
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+    - uses: actions/cache@v3
+      name: Setup pnpm Cache
+      with:
+        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: Create .npmrc
+      run: |
+        if [[ -n "${{ secrets._GITHUB_AUTH_TOKEN }}" ]]; then
+          echo "@fleetbase:registry=https://npm.pkg.github.com/" > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets._GITHUB_AUTH_TOKEN }}" >> .npmrc
+        fi
+      working-directory: ./console
+
     - name: Install Dependencies
       run: pnpm install
 
