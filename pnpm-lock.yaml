@@ -5,8 +5,8 @@ dependencies:
     specifier: ^0.4.1
     version: 0.4.1(ember-source@4.6.0)
   '@fleetbase/billing-engine':
-    specifier: ^0.0.2
-    version: 0.0.2(@babel/core@7.22.9)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.27.1)(webpack@5.74.0)
+    specifier: ^0.0.3
+    version: 0.0.3(@babel/core@7.22.9)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.27.1)(webpack@5.74.0)
   '@fleetbase/dev-engine':
     specifier: ^0.1.5
     version: 0.1.5(@babel/core@7.22.9)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.27.1)(webpack@5.74.0)
@@ -283,7 +283,7 @@ packages:
     engines: {node: 12.* || 14.* || >= 16}
     dependencies:
       ember-cli-babel: 7.26.11
-      ember-cli-htmlbars: 6.1.0
+      ember-cli-htmlbars: 6.2.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2091,8 +2091,8 @@ packages:
       - supports-color
     dev: true
 
-  /@fleetbase/billing-engine@0.0.2(@babel/core@7.22.9)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.27.1)(webpack@5.74.0):
-    resolution: {integrity: sha512-2sUHU44Ci5b+f/WAKEWcx2dTOAOnMhYTLIeZktRCTZyXUBswM+kAKYkWAAd/J+ZZehM0jDwsT7vKiiBpvPzbqg==, tarball: https://npm.pkg.github.com/download/@fleetbase/billing-engine/0.0.2/36ae4bd4e63222e79737cb2871d95c2f3289bb8a}
+  /@fleetbase/billing-engine@0.0.3(@babel/core@7.22.9)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.27.1)(webpack@5.74.0):
+    resolution: {integrity: sha512-NGj8LWfsEuVdE1XCsZ6MP9Tqjp9B1+vnk+Ns5xnCovOjmByR6sjyGYeUtYGOfbNFxDZUlwzujK1EZyuNSaurBA==, tarball: https://npm.pkg.github.com/download/@fleetbase/billing-engine/0.0.3/ca805fdc63b606eea510c06f2ef67a42bd9a6bdd}
     engines: {node: 14.* || >= 16}
     peerDependencies:
       ember-engines: ^0.8.23
@@ -2104,7 +2104,7 @@ packages:
       '@fortawesome/fontawesome-svg-core': 6.4.0
       '@fortawesome/free-solid-svg-icons': 6.4.0
       ember-cli-babel: 7.26.11
-      ember-cli-htmlbars: 6.1.0
+      ember-cli-htmlbars: 6.2.0
       ember-engines: 0.8.23(@ember/legacy-built-in-components@0.4.1)(ember-source@4.6.0)
       ember-radio-button: 3.0.0-beta.1
       ember-wormhole: 0.6.0

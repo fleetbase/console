@@ -31,7 +31,7 @@
         "@fleetbase/fleetops-data": "^0.0.6",
         "@fleetbase/fleetops-engine": "^0.1.9",
         "@fleetbase/iam-engine": "^0.0.3",
-        "@fleetbase/billing-engine": "^0.0.2",
+        "@fleetbase/billing-engine": "^0.0.3",
         "@fleetbase/leaflet-routing-machine": "^3.2.16",
         "@fleetbase/storefront-engine": "^0.1.4",
         "@fortawesome/ember-fontawesome": "^0.4.1",
