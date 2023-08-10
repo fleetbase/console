@@ -33,23 +33,23 @@ module.exports = function (defaults) {
         postcssOptions: {
             compile: {
                 enabled: true,
-                cacheInclude: [/.*\.(css|scss|hbs)$/, /.tailwind\/config\.js$/],
+                cacheInclude: [/.*\.(css|scss|hbs)$/, /.*\/tailwind\/config\.js$/, /.*tailwind\.js$/],
                 plugins: [
                     postcssAtRulesVariables,
                     postcssImport({
                         path: ['node_modules'],
                         plugins: [postcssAtRulesVariables, postcssImport],
                     }),
+                    tailwind('./tailwind.js'),
                     postcssPresetEnv({ stage: 1 }),
                     postcssMixins,
                     postcssEach,
-                    tailwind('./tailwind.js'),
                     autoprefixer,
                 ],
             },
             filter: {
                 enabled: true,
-                plugins: [postcssAtRulesVariables, postcssMixins, postcssEach, postcssConditionals],
+                plugins: [postcssAtRulesVariables, postcssMixins, postcssEach, postcssConditionals, tailwind('./tailwind.js')],
             },
         },
 

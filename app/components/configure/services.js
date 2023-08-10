@@ -24,6 +24,12 @@ export default class ConfigureServicesComponent extends Component {
     @tracked twilioSid = null;
     @tracked twilioToken = null;
     @tracked twilioFrom = null;
+    @tracked twilioTestPhone = null;
+    @tracked twilioTestResponse;
+
+    /** sentry service */
+    @tracked sentryDsn = null;
+    @tracked sentryTestResponse;
 
     /**
      * Creates an instance of ConfigureServicesComponent.
@@ -77,9 +83,45 @@ export default class ConfigureServicesComponent extends Component {
                     token: this.twilioToken,
                     from: this.twilioFrom,
                 },
+                sentry: {
+                    dsn: this.sentryDsn,
+                },
             })
             .then(() => {
                 this.notifications.success('Services configuration saved.');
+            })
+            .finally(() => {
+                this.isLoading = false;
+            });
+    }
+
+    @action testTwilio() {
+        this.isLoading = true;
+
+        this.fetch
+            .post('settings/test-twilio-config', {
+                sid: this.twilioSid,
+                token: this.twilioToken,
+                from: this.twilioFrom,
+                phone: this.twilioTestPhone,
+            })
+            .then((response) => {
+                this.twilioTestResponse = response;
+            })
+            .finally(() => {
+                this.isLoading = false;
+            });
+    }
+
+    @action testSentry() {
+        this.isLoading = true;
+
+        this.fetch
+            .post('settings/test-sentry-config', {
+                dsn: this.sentryDsn,
+            })
+            .then((response) => {
+                this.sentryTestResponse = response;
             })
             .finally(() => {
                 this.isLoading = false;

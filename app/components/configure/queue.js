@@ -73,4 +73,19 @@ export default class ConfigureQueueComponent extends Component {
                 this.isLoading = false;
             });
     }
+
+    @action test() {
+        this.isLoading = true;
+
+        this.fetch
+            .post('settings/test-queue-config', {
+                queue: this.driver,
+            })
+            .then((response) => {
+                this.testResponse = response;
+            })
+            .finally(() => {
+                this.isLoading = false;
+            });
+    }
 }

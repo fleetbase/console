@@ -54,6 +54,9 @@
                         </div>
                         <a href="javascript:;" class="text-danger text-xs mt-1" {{on "click" (fn this.unset "logo_url" "/images/fleetbase-logo-svg.svg")}}>Reset to default</a>
                     </div>
+                    <InputGroup @name="Default Theme">
+                        <Select @value={{@model.default_theme}} @onSelect={{this.setTheme}} @options={{this.themeOptions}} />
+                    </InputGroup>
                 </form>
             </ContentPanel>
 
