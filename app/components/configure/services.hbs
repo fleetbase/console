@@ -20,7 +20,7 @@
         </div>
     {{/if}}
     <div class="flex flex-row items-center mt-3">
-        <Input @value={{this.twilioTestPhone}} type="tel" placeholder="Send Test SMS Here" class="form-input form-input-sm" />
+        <Input @value={{this.twilioTestPhone}} @type="tel" placeholder="Send Test SMS Here" class="form-input form-input-sm" />
         <Button @wrapperClass="ml-2" @icon="plug" @text="Test Twilio Config" @onClick={{this.testTwilio}} @isLoading={{this.isLoading}} @disabled={{not this.twilioTestPhone}} />
     </div>
 </ContentPanel>

@@ -10,7 +10,7 @@ export default class ApplicationRoute extends Route {
     @service fetch;
     @service urlSearchParams;
     @service modalsManager;
-    // @service intl;
+    @service intl;
     @tracked defaultTheme;
 
     /**
@@ -67,7 +67,7 @@ export default class ApplicationRoute extends Route {
         }
 
         this.theme.initialize({ bodyClassNames, theme: this.defaultTheme });
-        // this.intl.setLocale(['en-us']);
+        this.intl.setLocale(['en-us']);
     }
 
     /**

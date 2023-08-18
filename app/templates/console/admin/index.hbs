@@ -5,18 +5,9 @@
     <div class="container mx-auto h-screen" {{increase-height-by 800}}>
         <div class="max-w-3xl my-10 mx-auto space-y-6">
             <div class="grid grid-cols-3 xs:grid-cols-1 gap-4">
-                <div class="bg-gray-700 rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center">
-                    <h3 class="text-gray-100 text-lg mb-1">Total Users</h3>
-                    <h2 class="text-white text-3xl font-bold">{{@model.total_users}}</h2>
-                </div>
-                <div class="bg-gray-700 rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center">
-                    <h3 class="text-gray-100 text-lg mb-1">Total Organizations</h3>
-                    <h2 class="text-white text-3xl font-bold">{{@model.total_organizations}}</h2>
-                </div>
-                <div class="bg-gray-700 rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center">
-                    <h3 class="text-gray-100 text-lg mb-1">Total Transactions</h3>
-                    <h2 class="text-white text-3xl font-bold">{{@model.total_transactions}}</h2>
-                </div>
+                <StatWidget @title="Total Users" @value={{@model.total_users}} />
+                <StatWidget @title="Total Organizations" @value={{@model.total_organizations}} />
+                <StatWidget @title="Total Transactions" @value={{@model.total_transactions}} />
             </div>
         </div>
     </div>

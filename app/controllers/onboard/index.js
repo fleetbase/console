@@ -121,6 +121,12 @@ export default class OnboardIndexController extends Controller {
                 if (response.status === 'success') {
                     this.session.isOnboarding().manuallyAuthenticate(response.token);
 
+                    if (response.skipVerification === true) {
+                        return this.transitionToRoute('console').then(() => {
+                            this.notifications.success('Welcome to Fleetbase!');
+                        });
+                    }
+
                     return this.transitionToRoute('onboard.verify-email', { queryParams: { hello: response.session } });
                 }
             })
