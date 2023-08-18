@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import isElectron from '@fleetbase/ember-core/utils/is-electron';
 import pathToRoute from '@fleetbase/ember-core/utils/path-to-route';
@@ -9,7 +10,8 @@ export default class ApplicationRoute extends Route {
     @service fetch;
     @service urlSearchParams;
     @service modalsManager;
-    // @service intl;
+    @service intl;
+    @tracked defaultTheme;
 
     /**
      * Check the installation status of Fleetbase and transition user accordingly.
@@ -20,7 +22,9 @@ export default class ApplicationRoute extends Route {
     // eslint-disable-next-line ember/classic-decorator-hooks
     async init() {
         super.init(...arguments);
-        const { shouldInstall, shouldOnboard } = await this.checkInstallationStatus();
+        const { shouldInstall, shouldOnboard, defaultTheme } = await this.checkInstallationStatus();
+
+        this.defaultTheme = defaultTheme;
 
         if (shouldInstall) {
             return this.transitionTo('install');
@@ -62,8 +66,8 @@ export default class ApplicationRoute extends Route {
             bodyClassNames.pushObject(['is-electron']);
         }
 
-        this.theme.initialize({ bodyClassNames });
-        // this.intl.setLocale(['en-us']);
+        this.theme.initialize({ bodyClassNames, theme: this.defaultTheme });
+        this.intl.setLocale(['en-us']);
     }
 
     /**

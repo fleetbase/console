@@ -1,6 +1,6 @@
 <div class="bg-white dark:bg-gray-800 py-5 px-4 shadow rounded-lg w-full">
     <div class="mb-4">
-        <Image src={{@model.logo_url}} @fallbackSrc="/images/fleetbase-logo-svg.svg" alt="Fleetbase" width="160" height="56" class="w-40 h-14 mx-auto" />
+        <Image src={{@model.logo_url}} @fallbackSrc="/images/fleetbase-logo-svg.svg" alt={{t "app.name"}} width="160" height="56" class="w-40 h-14 mx-auto" />
         <h2 class="text-center text-lg font-extrabold text-gray-900 dark:text-white truncate">
             Create your account
         </h2>
@@ -11,7 +11,7 @@
             <FaIcon @icon="hand-spock" @size="lg" class="text-blue-900 mr-4" />
         </div>
         <p class="flex-1 text-sm text-blue-900 dark:text-blue-900">
-            <strong>Welcome to Fleetbase!</strong><br />
+            <strong>Welcome to {{t "app.name"}}!</strong><br />
             Complete the details required below to get started.
         </p>
     </div>

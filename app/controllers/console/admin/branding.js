@@ -19,11 +19,36 @@ export default class ConsoleAdminBrandingController extends Controller {
     @service notifications;
 
     /**
+     * Inject the `theme` service.
+     *
+     * @memberof ConsoleAdminBrandingController
+     */
+    @service theme;
+
+    /**
      * Status of loading process.
      *
      * @memberof ConsoleAdminBrandingController
      */
     @tracked isLoading = false;
+
+    /**
+     * Theme options.
+     *
+     * @memberof ConsoleAdminBrandingController
+     */
+    @tracked themeOptions = ['light', 'dark'];
+
+    /**
+     * Set the default theme
+     *
+     * @param {String} theme
+     * @memberof ConsoleAdminBrandingController
+     */
+    @action setTheme(theme) {
+        this.model.default_theme = theme;
+        this.theme.setTheme(theme);
+    }
 
     /**
      * Unset a branding settings

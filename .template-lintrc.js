@@ -3,6 +3,7 @@
 module.exports = {
     extends: 'recommended',
     rules: {
+        'no-bare-strings': 'off',
         'no-invalid-interactive': 'off',
         'no-yield-only': 'off',
         'no-down-event-binding': 'off',

@@ -7,6 +7,7 @@ export default class ConfigureFilesystemComponent extends Component {
     @service fetch;
     @service notifications;
     @tracked isLoading = false;
+    @tracked testResponse;
     @tracked disks = [];
     @tracked driver = 'local';
     @tracked s3Bucket = null;
@@ -61,6 +62,21 @@ export default class ConfigureFilesystemComponent extends Component {
             })
             .then(() => {
                 this.notifications.success('Filesystem configuration saved.');
+            })
+            .finally(() => {
+                this.isLoading = false;
+            });
+    }
+
+    @action test() {
+        this.isLoading = true;
+
+        this.fetch
+            .post('settings/test-filesystem-config', {
+                disk: this.driver,
+            })
+            .then((response) => {
+                this.testResponse = response;
             })
             .finally(() => {
                 this.isLoading = false;

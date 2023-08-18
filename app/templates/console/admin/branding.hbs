@@ -9,7 +9,7 @@
                     <div class="input-group">
                         <label>Icon</label>
                         <div class="flex flex-row items-center space-x-2">
-                            <Image src={{@model.icon_url}} @fallbackSrc="/images/icon.png" alt="Fleetbase" width="32" height="32" class="w-8 h-8 shadow-sm" />
+                            <Image src={{@model.icon_url}} @fallbackSrc="/images/icon.png" alt={{t "app.name"}} width="32" height="32" class="w-8 h-8 shadow-sm" />
                             <FileUpload @name="icon" @accept="image/*" @onFileAdded={{this.uploadIcon}} @labelClass="flex flex-row items-center justify-center mb-0i" as |queue|>
                                 <a tabindex={{0}} class="flex items-center px-0 text-xs no-underline truncate btn btn-sm btn-default" disabled={{queue.files.length}}>
                                     {{#if queue.files.length}}
@@ -33,7 +33,7 @@
                     <div class="input-group">
                         <label>Logo</label>
                         <div class="flex flex-row items-center space-x-2">
-                            <Image src={{@model.logo_url}} @fallbackSrc="/images/fleetbase-logo-svg.svg" alt="Fleetbase" width="160" height="56" class="w-40 h-14" />
+                            <Image src={{@model.logo_url}} @fallbackSrc="/images/fleetbase-logo-svg.svg" alt={{t "app.name"}} width="160" height="56" class="w-40 h-14" />
                             <FileUpload @name="logo" @accept="image/*" @onFileAdded={{this.uploadLogo}} @labelClass="flex flex-row items-center justify-center mb-0i" as |queue|>
                                 <a tabindex={{0}} class="flex items-center px-0 text-xs no-underline truncate btn btn-sm btn-default" disabled={{queue.files.length}}>
                                     {{#if queue.files.length}}
@@ -54,6 +54,9 @@
                         </div>
                         <a href="javascript:;" class="text-danger text-xs mt-1" {{on "click" (fn this.unset "logo_url" "/images/fleetbase-logo-svg.svg")}}>Reset to default</a>
                     </div>
+                    <InputGroup @name="Default Theme">
+                        <Select @value={{@model.default_theme}} @onSelect={{this.setTheme}} @options={{this.themeOptions}} />
+                    </InputGroup>
                 </form>
             </ContentPanel>
 
