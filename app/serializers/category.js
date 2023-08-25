@@ -9,7 +9,29 @@ export default class CategorySerializer extends ApplicationSerializer.extend(Emb
      */
     get attrs() {
         return {
+            parent: { embedded: 'always' },
+            subcategories: { embedded: 'always' },
             icon_file: { embedded: 'always' },
         };
+    }
+
+    serializeBelongsTo(snapshot, json, relationship) {
+        let key = relationship.key;
+
+        if (key === 'parent') {
+            return;
+        }
+
+        return super.serializeBelongsTo(...arguments);
+    }
+
+    serializeHasMany(snapshot, json, relationship) {
+        let key = relationship.key;
+
+        if (key === 'subcategories') {
+            return;
+        }
+
+        return super.serializeHasMany(...arguments);
     }
 }

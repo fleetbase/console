@@ -1,4 +1,4 @@
-import Model, { attr, belongsTo } from '@ember-data/model';
+import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 import { tracked } from '@glimmer/tracking';
 import { computed, get } from '@ember/object';
 import { format, formatDistanceToNow } from 'date-fns';
@@ -14,6 +14,8 @@ export default class CategoryModel extends Model {
 
     /** @relationships */
     @belongsTo('file') icon_file;
+    @belongsTo('category', { inverse: 'subcategories', async: false }) parent;
+    @hasMany('category', { inverse: 'parent' }) subcategories;
     @tracked parent_category;
 
     /** @attributes */

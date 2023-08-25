@@ -34,6 +34,7 @@ Router.map(function () {
                 this.route('notification-channels');
                 this.route('queue');
                 this.route('services');
+                this.route('socket');
             });
             this.route('branding');
             this.route('virtual', { path: '/:slug/:view' });
