@@ -6,6 +6,7 @@ import { action } from '@ember/object';
 export default class ConfigureNotificationChannelsComponent extends Component {
     @service fetch;
     @service notifications;
+    @service currentUser;
     @tracked isLoading = false;
     @tracked testResponse;
     @tracked testTitle = 'Hello World from Fleetbase 🚀';
@@ -16,7 +17,9 @@ export default class ConfigureNotificationChannelsComponent extends Component {
         key_id: '',
         team_id: '',
         app_bundle_id: '',
-        private_key_content: '',
+        private_key_path: '',
+        private_key_file_id: '',
+        private_key_file: null,
         production: true,
     };
     @tracked fcm = {
@@ -28,6 +31,40 @@ export default class ConfigureNotificationChannelsComponent extends Component {
     constructor() {
         super(...arguments);
         this.loadConfigValues();
+    }
+
+    @action removeApnFile() {
+        const apnConfig = this.apn;
+        apnConfig.private_key_file = null;
+        apnConfig.private_key_file_id = '';
+        apnConfig.private_key_path = '';
+
+        this.apn = apnConfig;
+    }
+
+    @action uploadApnKey(file) {
+        try {
+            this.fetch.uploadFile.perform(
+                file,
+                {
+                    disk: 'local',
+                    path: `apn`,
+                    subject_uuid: this.currentUser.companyId,
+                    subject_type: `company`,
+                    type: `apn_key`,
+                },
+                (uploadedFile) => {
+                    const apnConfig = this.apn;
+                    apnConfig.private_key_file = uploadedFile;
+                    apnConfig.private_key_file_id = uploadedFile.id;
+                    apnConfig.private_key_path = uploadedFile.path;
+
+                    this.apn = apnConfig;
+                }
+            );
+        } catch (error) {
+            this.notifications.serverError(error);
+        }
     }
 
     @action setConfigValues(config) {
@@ -54,9 +91,12 @@ export default class ConfigureNotificationChannelsComponent extends Component {
     @action save() {
         this.isLoading = true;
 
+        const apnConfig = this.apn;
+        delete apnConfig.private_key_file;
+
         this.fetch
             .post('settings/notification-channels-config', {
-                apn: this.apn,
+                apn: apnConfig,
             })
             .then(() => {
                 this.notifications.success("Notification channel's configuration saved.");

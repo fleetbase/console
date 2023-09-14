@@ -2,11 +2,21 @@
     <InputGroup @name="APN Key ID" @value={{this.apn.key_id}} disabled={{this.isLoading}} />
     <InputGroup @name="APN Team ID" @value={{this.apn.team_id}} disabled={{this.isLoading}} />
     <InputGroup @name="APN App Bundle ID" @value={{this.apn.app_bundle_id}} disabled={{this.isLoading}} />
-    <InputGroup @name="APN Private Key" disabled={{this.isLoading}}>
+    {{!-- <InputGroup @name="APN Private Key" disabled={{this.isLoading}}>
         <Textarea class="form-input w-full" @value={{this.apn.private_key_content}} placeholder="APN Private Key" rows="10" disabled={{this.isLoading}} />
+    </InputGroup> --}}
+    <InputGroup @wrapperClass="flex flex-row items-center">
+        <UploadButton @name="apn-key" @accept="text/plain,application/x-pem-file,application/x-pkcs12,application/x-x509-ca-cert,.p12,.pem,.p8" @onFileAdded={{this.uploadApnKey}} @buttonText="Upload P8 Key File" @uploadIcon="upload" class="w-auto m-0i mt-0i" />
+        {{#if this.apn.private_key_file}}
+            <div class="ml-2.5 text-sm dark:text-white text-black flex flex-row items-center border border-blue-500 rounded-lg px-2 py-0.5 -mt-1">
+                <FaIcon @icon="file-text" @size="sm" class="mr-2 dark:text-white text-black" />
+                <span>{{this.apn.private_key_file.original_filename}}</span>
+                <a href="javascript:;" class="text-red-500 ml-2" {{on "click" this.removeApnFile}}><FaIcon @icon="times" class="text-red-500" /></a>
+            </div>
+        {{/if}}
     </InputGroup>
-    <InputGroup @name="APN Production">
-        <Checkbox @value={{this.apn.production}} @onToggle={{fn (mut this.apn.production)}} @disabled={{this.isLoading}} />
+    <InputGroup>
+        <Checkbox @label="APN Production" @value={{this.apn.production}} @onToggle={{fn (mut this.apn.production)}} @disabled={{this.isLoading}} />
     </InputGroup>
     {{#if this.testResponse}}
         <div class="animate-pulse flex flex-row items-center rounded-lg border {{if (eq this.testResponse.status 'error') 'border-red-900 bg-red-800 text-red-100' 'border-green-900 bg-green-800 text-green-100'}} shadow-sm my-2 px-4 py-2">
