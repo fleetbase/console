@@ -94,8 +94,9 @@ export default class ConsoleAdminBrandingController extends Controller {
                 path: `uploads/system`,
                 type: `system`,
             },
-            ({ url }) => {
-                this.model.icon_url = url;
+            (uploadedFile) => {
+                this.model.icon_uuid = uploadedFile.id;
+                this.model.icon_url = uploadedFile.url;
                 this.isLoading = false;
             }
         );
@@ -116,8 +117,9 @@ export default class ConsoleAdminBrandingController extends Controller {
                 path: `uploads/system`,
                 type: `system`,
             },
-            ({ url }) => {
-                this.model.logo_url = url;
+            (uploadedFile) => {
+                this.model.logo_uuid = uploadedFile.id;
+                this.model.logo_url = uploadedFile.url;
                 this.isLoading = false;
             }
         );
