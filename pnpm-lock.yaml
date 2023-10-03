@@ -22,8 +22,8 @@ dependencies:
     specifier: 0.1.0
     version: 0.1.0
   '@fleetbase/fleetops-engine':
-    specifier: ^0.2.4
-    version: 0.2.4(@babel/core@7.23.0)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.29.4)(webpack@5.74.0)
+    specifier: ^0.2.5
+    version: 0.2.5(@babel/core@7.23.0)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.29.4)(webpack@5.74.0)
   '@fleetbase/iam-engine':
     specifier: ^0.0.6
     version: 0.0.6(@babel/core@7.23.0)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.29.4)(webpack@5.74.0)
@@ -2600,8 +2600,8 @@ packages:
       - supports-color
     dev: false
 
-  /@fleetbase/fleetops-engine@0.2.4(@babel/core@7.23.0)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.29.4)(webpack@5.74.0):
-    resolution: {integrity: sha512-ivcGN0vz9TX7ygo/VaOc600vzFFFH5y+O5ONvJhH+VtE5bPVewr245logT61I3gV14qzV2gVTG8D6URUM4OFHw==}
+  /@fleetbase/fleetops-engine@0.2.5(@babel/core@7.23.0)(@ember/test-helpers@2.8.1)(ember-engines@0.8.23)(ember-fetch@8.1.1)(ember-source@4.6.0)(postcss@8.4.21)(rollup@3.29.4)(webpack@5.74.0):
+    resolution: {integrity: sha512-uRG5haTyPUTK72O4ThI0M0X3oi1kDh6rbg5YizRmt520eJdmj+ibXyIsC5a5nSxAIFlIw8uDrVD1eVkgg07ZfQ==}
     engines: {node: 14.* || >= 16}
     peerDependencies:
       ember-engines: ^0.8.23
@@ -2619,7 +2619,7 @@ packages:
       broccoli-merge-trees: 4.2.0
       ember-cli-babel: 7.26.11
       ember-cli-es6-transform: 1.0.0
-      ember-cli-htmlbars: 6.1.0
+      ember-cli-htmlbars: 6.3.0
       ember-engines: 0.8.23(@ember/legacy-built-in-components@0.4.1)(ember-source@4.6.0)
       ember-intl: 6.0.0-beta.6(webpack@5.74.0)
       ember-leaflet: 5.1.1(@babel/core@7.23.0)(ember-source@4.6.0)(leaflet@1.9.4)(webpack@5.74.0)
