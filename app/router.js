@@ -15,6 +15,10 @@ Router.map(function () {
     this.route('onboard', function () {
         this.route('verify-email');
     });
+    this.route('invite', { path: 'join' }, function () {
+        this.route('for-driver', { path: '/fleet/:public_id' });
+        this.route('for-user', { path: '/org/:public_id' });
+    });
     this.route('console', { path: '/' }, function () {
         this.route('home', { path: '/' });
         this.route('extensions');
